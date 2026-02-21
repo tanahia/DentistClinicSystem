@@ -55,5 +55,13 @@ namespace DentistClinicSystem
             frmAddPatient.Show();
 
         }
+
+        private void removePatientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmRemovePatient frmRemovePatient = new frmRemovePatient(this);
+            frmRemovePatient.Show();
+
+        }
     }
 }

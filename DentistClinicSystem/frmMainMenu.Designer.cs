@@ -144,6 +144,7 @@
             removePatientToolStripMenuItem.Name = "removePatientToolStripMenuItem";
             removePatientToolStripMenuItem.Size = new Size(329, 28);
             removePatientToolStripMenuItem.Text = "Remove Patient";
+            removePatientToolStripMenuItem.Click += removePatientToolStripMenuItem_Click;
             // 
             // menuStrip1
             // 
