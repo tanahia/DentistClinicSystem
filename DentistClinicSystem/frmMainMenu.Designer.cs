@@ -108,6 +108,7 @@
             removeDentistToolStripMenuItem.Name = "removeDentistToolStripMenuItem";
             removeDentistToolStripMenuItem.Size = new Size(329, 28);
             removeDentistToolStripMenuItem.Text = "Remove Dentist";
+            removeDentistToolStripMenuItem.Click += removeDentistToolStripMenuItem_Click;
             // 
             // nmuPatients
             // 
