@@ -32,5 +32,12 @@ namespace DentistClinicSystem
             frmAddDentist.Show();
 
         }
+
+        private void updateDentistInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmUpdateDentistInformation frmUpdateDentistInformation = new frmUpdateDentistInformation(this);
+            frmUpdateDentistInformation.Show();
+        }
     }
 }

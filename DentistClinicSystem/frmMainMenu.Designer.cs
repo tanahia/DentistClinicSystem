@@ -99,6 +99,7 @@
             updateDentistInformationToolStripMenuItem.Name = "updateDentistInformationToolStripMenuItem";
             updateDentistInformationToolStripMenuItem.Size = new Size(329, 28);
             updateDentistInformationToolStripMenuItem.Text = "Update Dentist Information";
+            updateDentistInformationToolStripMenuItem.Click += updateDentistInformationToolStripMenuItem_Click;
             // 
             // removeDentistToolStripMenuItem
             // 
