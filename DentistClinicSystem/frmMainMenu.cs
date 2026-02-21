@@ -84,5 +84,13 @@ namespace DentistClinicSystem
             frmUpdateServiceInformation frmUpdateServiceInformation = new frmUpdateServiceInformation(this);
             frmUpdateServiceInformation.Show();
         }
+
+        private void removeServiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmRemoveService frmRemoveService = new frmRemoveService(this);
+            frmRemoveService.Show();
+
+        }
     }
 }

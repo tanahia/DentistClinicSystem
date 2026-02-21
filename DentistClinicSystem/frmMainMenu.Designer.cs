@@ -201,6 +201,7 @@
             removeServiceToolStripMenuItem.Name = "removeServiceToolStripMenuItem";
             removeServiceToolStripMenuItem.Size = new Size(331, 28);
             removeServiceToolStripMenuItem.Text = "Remove Service";
+            removeServiceToolStripMenuItem.Click += removeServiceToolStripMenuItem_Click;
             // 
             // appointmentsToolStripMenuItem
             // 
