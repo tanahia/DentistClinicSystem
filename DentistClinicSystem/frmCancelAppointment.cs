@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-//using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DentistClinicSystem
 {
