@@ -92,5 +92,13 @@ namespace DentistClinicSystem
             frmRemoveService.Show();
 
         }
+
+        private void makeAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMakeAppointment frmMakeAppointment = new frmMakeAppointment(this);
+            frmMakeAppointment.Show();
+
+        }
     }
 }

@@ -220,6 +220,7 @@
             makeAppointmentToolStripMenuItem.Name = "makeAppointmentToolStripMenuItem";
             makeAppointmentToolStripMenuItem.Size = new Size(306, 28);
             makeAppointmentToolStripMenuItem.Text = "Make Appointment";
+            makeAppointmentToolStripMenuItem.Click += makeAppointmentToolStripMenuItem_Click;
             // 
             // rescheduleAppointmentToolStripMenuItem
             // 
