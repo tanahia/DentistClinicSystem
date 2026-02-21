@@ -136,6 +136,7 @@
             updatePatientInformationToolStripMenuItem.Name = "updatePatientInformationToolStripMenuItem";
             updatePatientInformationToolStripMenuItem.Size = new Size(329, 28);
             updatePatientInformationToolStripMenuItem.Text = "Update Patient Information";
+            updatePatientInformationToolStripMenuItem.Click += updatePatientInformationToolStripMenuItem_Click;
             // 
             // removePatientToolStripMenuItem
             // 
@@ -182,6 +183,7 @@
             addServiceToolStripMenuItem.Name = "addServiceToolStripMenuItem";
             addServiceToolStripMenuItem.Size = new Size(331, 28);
             addServiceToolStripMenuItem.Text = "Add Service";
+            addServiceToolStripMenuItem.Click += addServiceToolStripMenuItem_Click;
             // 
             // updateServiceInformationToolStripMenuItem
             // 
