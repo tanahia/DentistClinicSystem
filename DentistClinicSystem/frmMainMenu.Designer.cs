@@ -127,6 +127,7 @@
             addPatientToolStripMenuItem.Name = "addPatientToolStripMenuItem";
             addPatientToolStripMenuItem.Size = new Size(329, 28);
             addPatientToolStripMenuItem.Text = "Add Patient";
+            addPatientToolStripMenuItem.Click += addPatientToolStripMenuItem_Click;
             // 
             // updatePatientInformationToolStripMenuItem
             // 
