@@ -247,6 +247,7 @@
             makePrescriptionToolStripMenuItem.Name = "makePrescriptionToolStripMenuItem";
             makePrescriptionToolStripMenuItem.Size = new Size(306, 28);
             makePrescriptionToolStripMenuItem.Text = "Make Prescription";
+            makePrescriptionToolStripMenuItem.Click += makePrescriptionToolStripMenuItem_Click;
             // 
             // adminToolStripMenuItem
             // 
@@ -266,6 +267,7 @@
             yearlyRevenueAnalysisToolStripMenuItem.Name = "yearlyRevenueAnalysisToolStripMenuItem";
             yearlyRevenueAnalysisToolStripMenuItem.Size = new Size(299, 28);
             yearlyRevenueAnalysisToolStripMenuItem.Text = "Yearly revenue Analysis";
+            yearlyRevenueAnalysisToolStripMenuItem.Click += yearlyRevenueAnalysisToolStripMenuItem_Click;
             // 
             // frmWelcome
             // 

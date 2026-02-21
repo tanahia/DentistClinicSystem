@@ -115,5 +115,20 @@ namespace DentistClinicSystem
             frmCancelAppointment.Show();
 
         }
+
+        private void makePrescriptionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMakePrescription frmMakePrescription = new frmMakePrescription(this);
+            frmMakePrescription.Show();
+        }
+
+        private void yearlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmYearlyRevenueAnalysis frmYearlyRevenueAnalysis = new frmYearlyRevenueAnalysis(this);
+            frmYearlyRevenueAnalysis.Show();
+
+        }
     }
 }
