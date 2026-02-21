@@ -1,0 +1,145 @@
+﻿namespace DentistClinicSystem
+{
+    partial class frmRescheduleAppointment
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            btnSave = new Button();
+            btnExit = new Button();
+            label3 = new Label();
+            dtpAppointmentDate = new DateTimePicker();
+            grpRescheduleAppointment = new GroupBox();
+            btnReschedule = new Button();
+            cmbRescheduleAppointment = new ComboBox();
+            grpRescheduleAppointment.SuspendLayout();
+            SuspendLayout();
+            // 
+            // btnSave
+            // 
+            btnSave.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = SystemColors.HotTrack;
+            btnSave.Location = new Point(196, 458);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(196, 56);
+            btnSave.TabIndex = 22;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = SystemColors.HotTrack;
+            btnExit.Location = new Point(683, 0);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(72, 33);
+            btnExit.TabIndex = 21;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(10, 104);
+            label3.Name = "label3";
+            label3.Size = new Size(171, 23);
+            label3.TabIndex = 23;
+            label3.Text = "Appointment Date:";
+            // 
+            // dtpAppointmentDate
+            // 
+            dtpAppointmentDate.Location = new Point(197, 104);
+            dtpAppointmentDate.Name = "dtpAppointmentDate";
+            dtpAppointmentDate.Size = new Size(250, 30);
+            dtpAppointmentDate.TabIndex = 24;
+            dtpAppointmentDate.Value = new DateTime(2025, 11, 25, 0, 0, 0, 0);
+            // 
+            // grpRescheduleAppointment
+            // 
+            grpRescheduleAppointment.Controls.Add(btnReschedule);
+            grpRescheduleAppointment.Controls.Add(cmbRescheduleAppointment);
+            grpRescheduleAppointment.Controls.Add(dtpAppointmentDate);
+            grpRescheduleAppointment.Controls.Add(label3);
+            grpRescheduleAppointment.Controls.Add(btnExit);
+            grpRescheduleAppointment.Controls.Add(btnSave);
+            grpRescheduleAppointment.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpRescheduleAppointment.ForeColor = SystemColors.HotTrack;
+            grpRescheduleAppointment.Location = new Point(22, 24);
+            grpRescheduleAppointment.Name = "grpRescheduleAppointment";
+            grpRescheduleAppointment.RightToLeft = RightToLeft.No;
+            grpRescheduleAppointment.Size = new Size(755, 399);
+            grpRescheduleAppointment.TabIndex = 3;
+            grpRescheduleAppointment.TabStop = false;
+            grpRescheduleAppointment.Text = "Choose the Appointment ID:";
+            // 
+            // btnReschedule
+            // 
+            btnReschedule.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReschedule.ForeColor = SystemColors.HotTrack;
+            btnReschedule.Location = new Point(251, 235);
+            btnReschedule.Name = "btnReschedule";
+            btnReschedule.Size = new Size(196, 56);
+            btnReschedule.TabIndex = 26;
+            btnReschedule.Text = "Reschedule";
+            btnReschedule.UseVisualStyleBackColor = true;
+            btnReschedule.Click += btnReschedule_Click;
+            // 
+            // cmbRescheduleAppointment
+            // 
+            cmbRescheduleAppointment.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbRescheduleAppointment.FormattingEnabled = true;
+            cmbRescheduleAppointment.Items.AddRange(new object[] { "00001" });
+            cmbRescheduleAppointment.Location = new Point(10, 43);
+            cmbRescheduleAppointment.Name = "cmbRescheduleAppointment";
+            cmbRescheduleAppointment.Size = new Size(192, 31);
+            cmbRescheduleAppointment.TabIndex = 25;
+            cmbRescheduleAppointment.SelectedIndexChanged += cmbRescheduleAppointment_SelectedIndexChanged;
+            // 
+            // frmRescheduleAppointment
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(grpRescheduleAppointment);
+            Name = "frmRescheduleAppointment";
+            Text = "Dentist Clinic System - [Reschedule Appointment]";
+            grpRescheduleAppointment.ResumeLayout(false);
+            grpRescheduleAppointment.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Button btnSave;
+        private Button btnExit;
+        private Label label3;
+        private DateTimePicker dtpAppointmentDate;
+        private GroupBox grpRescheduleAppointment;
+        private ComboBox cmbRescheduleAppointment;
+        private Button btnReschedule;
+    }
+}

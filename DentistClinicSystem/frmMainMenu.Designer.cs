@@ -229,6 +229,7 @@
             rescheduleAppointmentToolStripMenuItem.Name = "rescheduleAppointmentToolStripMenuItem";
             rescheduleAppointmentToolStripMenuItem.Size = new Size(306, 28);
             rescheduleAppointmentToolStripMenuItem.Text = "Reschedule Appointment";
+            rescheduleAppointmentToolStripMenuItem.Click += rescheduleAppointmentToolStripMenuItem_Click;
             // 
             // cancelAppointmentToolStripMenuItem
             // 
