@@ -107,5 +107,13 @@ namespace DentistClinicSystem
             frmRescheduleAppointment frmRescheduleAppointment = new frmRescheduleAppointment(this);
             frmRescheduleAppointment.Show();
         }
+
+        private void cancelAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCancelAppointment frmCancelAppointment = new frmCancelAppointment(this);
+            frmCancelAppointment.Show();
+
+        }
     }
 }

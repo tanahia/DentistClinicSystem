@@ -238,6 +238,7 @@
             cancelAppointmentToolStripMenuItem.Name = "cancelAppointmentToolStripMenuItem";
             cancelAppointmentToolStripMenuItem.Size = new Size(306, 28);
             cancelAppointmentToolStripMenuItem.Text = "Cancel Appointment";
+            cancelAppointmentToolStripMenuItem.Click += cancelAppointmentToolStripMenuItem_Click;
             // 
             // makePrescriptionToolStripMenuItem
             // 
