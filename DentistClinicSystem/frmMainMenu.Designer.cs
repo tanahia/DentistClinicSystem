@@ -90,7 +90,7 @@
             addDentistToolStripMenuItem.Name = "addDentistToolStripMenuItem";
             addDentistToolStripMenuItem.Size = new Size(329, 28);
             addDentistToolStripMenuItem.Text = "Add Dentist";
-           
+            addDentistToolStripMenuItem.Click += addDentistToolStripMenuItem_Click;
             // 
             // updateDentistInformationToolStripMenuItem
             // 
@@ -99,7 +99,6 @@
             updateDentistInformationToolStripMenuItem.Name = "updateDentistInformationToolStripMenuItem";
             updateDentistInformationToolStripMenuItem.Size = new Size(329, 28);
             updateDentistInformationToolStripMenuItem.Text = "Update Dentist Information";
-           
             // 
             // removeDentistToolStripMenuItem
             // 
@@ -108,7 +107,6 @@
             removeDentistToolStripMenuItem.Name = "removeDentistToolStripMenuItem";
             removeDentistToolStripMenuItem.Size = new Size(329, 28);
             removeDentistToolStripMenuItem.Text = "Remove Dentist";
-           
             // 
             // nmuPatients
             // 
@@ -127,7 +125,6 @@
             addPatientToolStripMenuItem.Name = "addPatientToolStripMenuItem";
             addPatientToolStripMenuItem.Size = new Size(329, 28);
             addPatientToolStripMenuItem.Text = "Add Patient";
-           
             // 
             // updatePatientInformationToolStripMenuItem
             // 
@@ -136,7 +133,6 @@
             updatePatientInformationToolStripMenuItem.Name = "updatePatientInformationToolStripMenuItem";
             updatePatientInformationToolStripMenuItem.Size = new Size(329, 28);
             updatePatientInformationToolStripMenuItem.Text = "Update Patient Information";
-         
             // 
             // removePatientToolStripMenuItem
             // 
@@ -145,7 +141,6 @@
             removePatientToolStripMenuItem.Name = "removePatientToolStripMenuItem";
             removePatientToolStripMenuItem.Size = new Size(329, 28);
             removePatientToolStripMenuItem.Text = "Remove Patient";
-            
             // 
             // menuStrip1
             // 
@@ -183,7 +178,6 @@
             addServiceToolStripMenuItem.Name = "addServiceToolStripMenuItem";
             addServiceToolStripMenuItem.Size = new Size(331, 28);
             addServiceToolStripMenuItem.Text = "Add Service";
-           
             // 
             // updateServiceInformationToolStripMenuItem
             // 
@@ -192,7 +186,6 @@
             updateServiceInformationToolStripMenuItem.Name = "updateServiceInformationToolStripMenuItem";
             updateServiceInformationToolStripMenuItem.Size = new Size(331, 28);
             updateServiceInformationToolStripMenuItem.Text = "Update Service Information";
-           
             // 
             // removeServiceToolStripMenuItem
             // 
@@ -201,7 +194,6 @@
             removeServiceToolStripMenuItem.Name = "removeServiceToolStripMenuItem";
             removeServiceToolStripMenuItem.Size = new Size(331, 28);
             removeServiceToolStripMenuItem.Text = "Remove Service";
-            
             // 
             // appointmentsToolStripMenuItem
             // 
@@ -220,7 +212,6 @@
             makeAppointmentToolStripMenuItem.Name = "makeAppointmentToolStripMenuItem";
             makeAppointmentToolStripMenuItem.Size = new Size(306, 28);
             makeAppointmentToolStripMenuItem.Text = "Make Appointment";
-            
             // 
             // rescheduleAppointmentToolStripMenuItem
             // 
@@ -229,7 +220,6 @@
             rescheduleAppointmentToolStripMenuItem.Name = "rescheduleAppointmentToolStripMenuItem";
             rescheduleAppointmentToolStripMenuItem.Size = new Size(306, 28);
             rescheduleAppointmentToolStripMenuItem.Text = "Reschedule Appointment";
-           
             // 
             // cancelAppointmentToolStripMenuItem
             // 
@@ -238,7 +228,6 @@
             cancelAppointmentToolStripMenuItem.Name = "cancelAppointmentToolStripMenuItem";
             cancelAppointmentToolStripMenuItem.Size = new Size(306, 28);
             cancelAppointmentToolStripMenuItem.Text = "Cancel Appointment";
-           
             // 
             // makePrescriptionToolStripMenuItem
             // 
@@ -247,7 +236,6 @@
             makePrescriptionToolStripMenuItem.Name = "makePrescriptionToolStripMenuItem";
             makePrescriptionToolStripMenuItem.Size = new Size(306, 28);
             makePrescriptionToolStripMenuItem.Text = "Make Prescription";
-          
             // 
             // adminToolStripMenuItem
             // 
@@ -267,7 +255,6 @@
             yearlyRevenueAnalysisToolStripMenuItem.Name = "yearlyRevenueAnalysisToolStripMenuItem";
             yearlyRevenueAnalysisToolStripMenuItem.Size = new Size(299, 28);
             yearlyRevenueAnalysisToolStripMenuItem.Text = "Yearly revenue Analysis";
-           
             // 
             // frmWelcome
             // 
