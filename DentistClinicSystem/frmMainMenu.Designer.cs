@@ -192,6 +192,7 @@
             updateServiceInformationToolStripMenuItem.Name = "updateServiceInformationToolStripMenuItem";
             updateServiceInformationToolStripMenuItem.Size = new Size(331, 28);
             updateServiceInformationToolStripMenuItem.Text = "Update Service Information";
+            updateServiceInformationToolStripMenuItem.Click += updateServiceInformationToolStripMenuItem_Click;
             // 
             // removeServiceToolStripMenuItem
             // 
