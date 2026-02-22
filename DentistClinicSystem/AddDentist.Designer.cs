@@ -183,6 +183,7 @@
             Controls.Add(grpAddDentist);
             Name = "frmAddDentist";
             Text = "Dentist Clinic System - [Add Dentist]";
+            Load += frmAddDentist_Load;
             grpAddDentist.ResumeLayout(false);
             grpAddDentist.PerformLayout();
             ResumeLayout(false);

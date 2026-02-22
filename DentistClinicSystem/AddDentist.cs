@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-//using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DentistClinicSystem
 {
@@ -69,6 +69,13 @@ namespace DentistClinicSystem
                 return;
             }
 
+            Dentist newDentist = new Dentist(Convert.ToInt32(txtDentistID.Text), txtFullName.Text, txtPhone.Text, txtAddress.Text, txtBio.Text);
+            newDentist.AddDentist();
+
+            MessageBox.Show("Dentist added to the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            txtDentistID.Text = Dentist.GetNextDentID().ToString("000");
             txtFullName.Clear();
             txtPhone.Clear();
             txtAddress.Clear();
@@ -85,7 +92,13 @@ namespace DentistClinicSystem
 
         }
 
+        private void frmAddDentist_Load(object sender, EventArgs e)
+        {
+            txtDentistID.Text = Dentist.GetNextDentID().ToString("000");
 
- 
+
+        }
+
+
     }
 }
