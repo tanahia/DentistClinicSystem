@@ -75,7 +75,7 @@ namespace DentistClinicSystem
             MessageBox.Show("Dentist added to the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-            txtDentistID.Text = Dentist.GetNextDentID().ToString("000");
+            txtDentistID.Text = Dentist.GetNextDentID().ToString("00");
             txtFullName.Clear();
             txtPhone.Clear();
             txtAddress.Clear();
@@ -94,7 +94,7 @@ namespace DentistClinicSystem
 
         private void frmAddDentist_Load(object sender, EventArgs e)
         {
-            txtDentistID.Text = Dentist.GetNextDentID().ToString("000");
+            txtDentistID.Text = Dentist.GetNextDentID().ToString("00");
 
 
         }

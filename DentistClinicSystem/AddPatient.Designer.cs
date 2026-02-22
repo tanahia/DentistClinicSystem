@@ -245,6 +245,7 @@
             Controls.Add(txtPatientID);
             Name = "frmAddPatient";
             Text = "Dentist Clinic System - [AddPatient]";
+            Load += frmAddPatient_Load;
             grpAddDentist.ResumeLayout(false);
             grpAddDentist.PerformLayout();
             ResumeLayout(false);

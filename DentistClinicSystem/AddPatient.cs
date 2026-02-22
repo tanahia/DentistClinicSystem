@@ -84,10 +84,12 @@ namespace DentistClinicSystem
                 txtDentalProblems.Focus();
                 return;
             }
+            Patient newPatient = new Patient(Convert.ToInt32(txtPatientID.Text), txtFullName.Text, txtPhone.Text, txtAddress.Text, dtpDateofBirth.Value, txtHealthProblems.Text, txtDentalProblems.Text, txtAllergies.Text);
+            newPatient.AddPatient();
 
             MessageBox.Show("Patient added to the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-           
+            txtPatientID.Text = Patient.GetNextPatientID().ToString("00");
             txtFullName.Clear();
             txtPhone.Clear();
             txtAddress.Clear();
@@ -99,6 +101,9 @@ namespace DentistClinicSystem
 
         }
 
-
+        private void frmAddPatient_Load(object sender, EventArgs e)
+        {
+            txtPatientID.Text = Patient.GetNextPatientID().ToString("00");
+        }
     }
 }
