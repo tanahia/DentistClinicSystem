@@ -69,5 +69,29 @@ namespace DentistClinicSystem
 
         }
 
+       public static DataSet FindDentists(string name)
+        {
+            string sqlQuery = "SELECT  DENTISTID, FULLNAME, PHONENUMBER, HOMEADDRESS, BIO FROM Dentists " +"WHERE FULLNAME LIKE '%" + name + "%' ORDER BY FULLNAME";
+            return DBConnect.ExecuteMultiRowQuery(sqlQuery);
+        }
+
+        public static Dentist GetDentistByID(int iD)
+        {
+            string sqlQuery = "SELECT * FROM Dentists WHERE DENTISTID = " + iD;
+            OracleDataReader reader = DBConnect.ExecuteSingleRowQuery(sqlQuery);
+            reader.Read();
+            string fullName = reader.GetString(1);
+            string phone = reader.GetString(2);
+            string address = reader.GetString(3);
+            string bio = reader.GetString(4);
+            reader.Close();
+            return new Dentist(iD, fullName, phone, address, bio);
+        }
+
+        internal void UpdateDentist()
+        {
+           string sqlQuery = "UPDATE DENTISTS SET FULLNAME = '" + FullName + "', PHONENUMBER = '" + Phone + "', HOMEADDRESS = '" + Address + "', BIO = '" + Bio + "' WHERE DENTISTID = " + DentistID;
+            DBConnect.ExecuteNonQuery(sqlQuery);
+        }
     }
 }

@@ -30,26 +30,66 @@ namespace DentistClinicSystem
             parent.Visible = true;
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            int i;
+            if (txtSearch.Text.Equals(""))
+            {
+                MessageBox.Show("DEntist Name must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSearch.Focus();
+                return;
+            }
+            else if (int.TryParse(txtSearch.Text, out i))
+            {
+                MessageBox.Show("Full Name must be alphabetic.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSearch.Focus();
+                return;
+            }
+            grdDentists.DataSource = Dentist.FindDentists(txtSearch.Text).Tables[0];
+
+            if (grdDentists.Rows.Count == 0)
+            {
+
+                MessageBox.Show("No Data Found");
+
+                txtSearch.Focus();
+
+                return;
+
+            }
+            grdDentists.Visible = true;
+
+           
+            txtSearch.Clear();
+            txtSearch.Focus();
+        }
+
+        private void grdDentists_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ID = Convert.ToInt32(grdDentists.Rows[grdDentists.CurrentCell.RowIndex].Cells[0].Value);
+            Dentist dentist = Dentist.GetDentistByID(ID);
+            txtFullName.Text = dentist.FullName;
+            txtPhone.Text = dentist.Phone;
+            txtAddress.Text = dentist.Address;
+            txtBio.Text = dentist.Bio;
+            grpDentists.Visible = true;
+
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int i;
-            if (cmbUpdateDentist.Text == "")
-            {
-                MessageBox.Show("Please select a DentistID to update.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cmbUpdateDentist.Focus();
-                return;
-            }
 
-            else if (txtDentistFullName.Text.Equals(""))
+            if (txtFullName.Text.Equals(""))
             {
                 MessageBox.Show("Full Name must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDentistFullName.Focus();
+                txtFullName.Focus();
                 return;
             }
-            else if (int.TryParse(txtDentistFullName.Text, out i))
+            else if (int.TryParse(txtFullName.Text, out i))
             {
                 MessageBox.Show("Full Name must be alphabetic.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDentistFullName.Focus();
+                txtFullName.Focus();
                 return;
             }
             else if (txtPhone.Text.Equals(""))
@@ -59,9 +99,9 @@ namespace DentistClinicSystem
                 txtPhone.Focus();
                 return;
             }
-            else if (!int.TryParse(txtPhone.Text, out i) || !txtPhone.Text.StartsWith("+"))
+            else if (!int.TryParse(txtPhone.Text, out i))
             {
-                MessageBox.Show("Phone number must start with '+' and have only numeric characters expect the first character.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Phone number must  have only numeric characters.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPhone.Focus();
                 return;
             }
@@ -77,15 +117,22 @@ namespace DentistClinicSystem
                 txtBio.Focus();
                 return;
             }
-           
+            Dentist dentist = Dentist.GetDentistByID(Convert.ToInt32(grdDentists.Rows[grdDentists.CurrentCell.RowIndex].Cells[0].Value));
+            dentist.FullName= txtFullName.Text;
+            dentist.Phone= txtPhone.Text;
+            dentist.Address= txtAddress.Text;
+            dentist.Bio= txtBio.Text;
+
+            dentist.UpdateDentist();
             MessageBox.Show("Dentist Information is updated in the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            txtDentistFullName.Clear();
-            txtPhone.Clear();
-            txtAddress.Clear();
-            txtBio.Clear();
-            cmbUpdateDentist.Items.Clear();
-            txtDentistFullName.Focus();
+                txtFullName.Clear();
+                txtPhone.Clear();
+                txtAddress.Clear();
+                txtBio.Clear();
+                grdDentists.Visible = false;
+                grpDentists.Visible = false;
+                txtSearch.Focus();
         }
     }
 }
