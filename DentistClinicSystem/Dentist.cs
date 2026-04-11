@@ -1,6 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -59,5 +60,14 @@ namespace DentistClinicSystem
             return nextID;
 
         }
+        public static DataSet getDentists()
+
+        {
+
+            String sqlQuery = "SELECT * FROM Dentists";
+            return DBConnect.ExecuteMultiRowQuery(sqlQuery);
+
+        }
+
     }
 }

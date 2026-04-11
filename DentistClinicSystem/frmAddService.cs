@@ -33,14 +33,14 @@ namespace DentistClinicSystem
         private void btnSave_Click(object sender, EventArgs e)
         {
             int i;
-            if (cmbDentistID.Text == "")
-            {
-                MessageBox.Show("Please select a DentistID to add service.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (cmbDentistName.Text == "")
+               {
+                   MessageBox.Show("Please select a DentistID to add service.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                cmbDentistID.Focus();
-                return;
-            }
-            else if (txtServiceTitle.Text.Equals(""))
+                   cmbDentistName.Focus();
+                   return;
+               }
+ else  if (txtServiceTitle.Text.Equals(""))
             {
                 MessageBox.Show("Service Title must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtServiceTitle.Focus();
@@ -65,13 +65,36 @@ namespace DentistClinicSystem
                 return;
             }
 
-           
-            
+            Service service = new Service(Convert.ToInt32(txtServiceID.Text), txtServiceTitle.Text, Convert.ToDecimal(txtPrice.Text), cmbDentistName.Text.Substring(0, 2));
+            service.AddService();
             MessageBox.Show("Service added to the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            cmbDentistID.Items.Clear();
+
+            txtServiceID.Text = Service.GetNextServiceID().ToString("000");
+            cmbDentistName.Items.Clear();
             txtPrice.Clear();
+            txtServiceID.Clear();
             txtServiceTitle.Clear();
-            cmbDentistID.Focus();
+            txtServiceTitle.Focus();
+        }
+
+        private void frmAddService_Load(object sender, EventArgs e)
+        {
+            txtServiceID.Text = Service.GetNextServiceID().ToString("000");
+
+
+            DataSet ds = Dentist.getDentists();
+
+
+            cmbDentistName.Items.Clear();
+
+
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+
+            {
+
+                cmbDentistName.Items.Add(ds.Tables[0].Rows[i][0] + " - " + ds.Tables[0].Rows[i][1]);
+
+            }
         }
     }
 }
