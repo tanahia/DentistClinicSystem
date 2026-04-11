@@ -2,6 +2,7 @@
 using Oracle.ManagedDataAccess.Types;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -32,8 +33,7 @@ namespace DentistClinicSystem
             DentalProblems = dentalProblems;
             Allergies = allergies;
         }
-        // Replace all occurrences of 'DateOfBirth.Value' with 'DateOfBirth' since DateOfBirth is of type DateTime, not Nullable<DateTime>.
-        // Also, to ensure correct SQL formatting, use DateOfBirth.ToString("yyyy-MM-dd") for the SQL string.
+       
 
         public override string ToString()
         {
@@ -69,6 +69,12 @@ namespace DentistClinicSystem
             }
             reader.Close();
             return nextID;
+        }
+
+        public static DataSet getPatients()
+        {
+            String sqlQuery = "SELECT * FROM Patients";
+            return DBConnect.ExecuteMultiRowQuery(sqlQuery);
         }
     }
 }

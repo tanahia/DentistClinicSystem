@@ -29,53 +29,23 @@ namespace DentistClinicSystem
         {
             int i;
 
-            if (txtFullName.Text.Equals(""))
+            if (cmbPatientName.Text == "")
             {
-                MessageBox.Show("Full Name must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtFullName.Focus();
+                MessageBox.Show("Patient must be selected", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmbPatientName.Focus();
                 return;
             }
-            else if (int.TryParse(txtFullName.Text, out i))
+            else if (cmbDentistName.Text == "")
             {
-                MessageBox.Show("Full Name must be alphabetic.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtFullName.Focus();
+                MessageBox.Show("Dentist must be selected", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmbDentistName.Focus();
                 return;
             }
-            else if (txtPhone.Text.Equals(""))
+            else if (cmbServiceTitle.Text == "")
             {
 
-                MessageBox.Show("Phone number must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPhone.Focus();
-                return;
-            }
-            else if (!int.TryParse(txtPhone.Text, out i) || !txtPhone.Text.StartsWith("+"))
-            {
-                MessageBox.Show("Phone number must start with '+' and have only numeric characters expect the first character.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPhone.Focus();
-                return;
-            }
-            else if (txtDentistFullName.Text.Equals(""))
-            {
-                MessageBox.Show("Dentist Full Name must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDentistFullName.Focus();
-                return;
-            }
-            else if (int.TryParse(txtDentistFullName.Text, out i))
-            {
-                MessageBox.Show("Dentist Full Name must be alphabetic.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDentistFullName.Focus();
-                return;
-            }
-            else if (txtServiceTitle.Text.Equals(""))
-            {
-                MessageBox.Show("Service Title must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtServiceTitle.Focus();
-                return;
-            }
-            else if (int.TryParse(txtServiceTitle.Text, out i))
-            {
-                MessageBox.Show("Service Title must be alphabetic.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtServiceTitle.Focus();
+                MessageBox.Show("Service title must be selected", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cmbServiceTitle.Focus();
                 return;
             }
             else if (dtpAppointmentDate.Value.Equals(DateTime.Today))
@@ -84,9 +54,9 @@ namespace DentistClinicSystem
                 dtpAppointmentDate.Focus();
                 return;
             }
-            else if (dtpAppointmentDate.Value >= DateTime.Today)
+            else if (dtpAppointmentDate.Value < DateTime.Today)
             {
-                MessageBox.Show("Appointment Date must be a past date.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Appointment Date must be a future date.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpAppointmentDate.Focus();
                 return;
             }
@@ -97,21 +67,62 @@ namespace DentistClinicSystem
                 return;
             }
 
+            Appointment appointment = new Appointment(Convert.ToInt32(txtAppointmentID.Text), cmbPatientName.Text.Substring(0, 2), cmbDentistName.Text.Substring(0, 2), cmbServiceTitle.Text.Substring(0, 2), dtpAppointmentDate.Value, txtComplaint.Text);
+            appointment.AddAppointment();
 
             MessageBox.Show("Apointment added to the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txtFullName.Clear();
-            txtDentistFullName.Clear();
-            txtPhone.Clear();
-            txtServiceTitle.Clear();
+
+            txtAppointmentID.Text = Appointment.GetNextAppointmentID().ToString("00");
+            cmbPatientName.Items.Clear();
+            cmbDentistName.Items.Clear();
+            cmbServiceTitle.Items.Clear();
             txtComplaint.Clear();
             dtpAppointmentDate.Value = DateTime.Now;
-            txtFullName.Focus();
+            cmbPatientName.Focus();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
             parent.Visible = true;
+        }
+
+        private void frmMakeAppointment_Load(object sender, EventArgs e)
+        {
+            txtAppointmentID.Text = Appointment.GetNextAppointmentID().ToString("000");
+
+
+            DataSet dentists = Dentist.getDentists();
+            DataSet patients = Patient.getPatients();
+            DataSet services = Service.getServices();
+
+            cmbDentistName.Items.Clear();
+            cmbPatientName.Items.Clear();
+            cmbServiceTitle.Items.Clear();
+
+                for (int i = 0; i < patients.Tables[0].Rows.Count; i++)
+    
+                {
+    
+                    cmbPatientName.Items.Add(patients.Tables[0].Rows[i][0] + " - " + patients.Tables[0].Rows[i][1]);
+    
+                }
+                for (int i = 0; i < services.Tables[0].Rows.Count; i++)
+    
+                {
+    
+                    cmbServiceTitle.Items.Add(services.Tables[0].Rows[i][0] + " - " + services.Tables[0].Rows[i][1]);
+
+                 }
+
+
+                for (int i = 0; i < dentists.Tables[0].Rows.Count; i++)
+
+                {
+
+                cmbDentistName.Items.Add(dentists.Tables[0].Rows[i][0] + " - " + dentists.Tables[0].Rows[i][1]);
+
+             }
         }
     }
 }

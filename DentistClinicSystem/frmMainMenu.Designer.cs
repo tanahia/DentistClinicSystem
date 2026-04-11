@@ -48,7 +48,6 @@
             makeAppointmentToolStripMenuItem = new ToolStripMenuItem();
             rescheduleAppointmentToolStripMenuItem = new ToolStripMenuItem();
             cancelAppointmentToolStripMenuItem = new ToolStripMenuItem();
-            makePrescriptionToolStripMenuItem = new ToolStripMenuItem();
             adminToolStripMenuItem = new ToolStripMenuItem();
             yearlyRevenueAnalysisToolStripMenuItem = new ToolStripMenuItem();
             frmWelcome = new Label();
@@ -205,7 +204,7 @@
             // 
             // appointmentsToolStripMenuItem
             // 
-            appointmentsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { makeAppointmentToolStripMenuItem, rescheduleAppointmentToolStripMenuItem, cancelAppointmentToolStripMenuItem, makePrescriptionToolStripMenuItem });
+            appointmentsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { makeAppointmentToolStripMenuItem, rescheduleAppointmentToolStripMenuItem, cancelAppointmentToolStripMenuItem });
             appointmentsToolStripMenuItem.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             appointmentsToolStripMenuItem.ForeColor = Color.CornflowerBlue;
             appointmentsToolStripMenuItem.Name = "appointmentsToolStripMenuItem";
@@ -239,15 +238,6 @@
             cancelAppointmentToolStripMenuItem.Size = new Size(306, 28);
             cancelAppointmentToolStripMenuItem.Text = "Cancel Appointment";
             cancelAppointmentToolStripMenuItem.Click += cancelAppointmentToolStripMenuItem_Click;
-            // 
-            // makePrescriptionToolStripMenuItem
-            // 
-            makePrescriptionToolStripMenuItem.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            makePrescriptionToolStripMenuItem.ForeColor = SystemColors.MenuHighlight;
-            makePrescriptionToolStripMenuItem.Name = "makePrescriptionToolStripMenuItem";
-            makePrescriptionToolStripMenuItem.Size = new Size(306, 28);
-            makePrescriptionToolStripMenuItem.Text = "Make Prescription";
-            makePrescriptionToolStripMenuItem.Click += makePrescriptionToolStripMenuItem_Click;
             // 
             // adminToolStripMenuItem
             // 
@@ -351,7 +341,6 @@
         private ToolStripMenuItem makeAppointmentToolStripMenuItem;
         private ToolStripMenuItem rescheduleAppointmentToolStripMenuItem;
         private ToolStripMenuItem cancelAppointmentToolStripMenuItem;
-        private ToolStripMenuItem makePrescriptionToolStripMenuItem;
         private ToolStripMenuItem yearlyRevenueAnalysisToolStripMenuItem;
         private Button btnExit;
     }

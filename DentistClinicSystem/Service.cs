@@ -58,10 +58,10 @@ namespace DentistClinicSystem
             return nextID;
 
         }
-        public static  DataSet getDentists()
+        public static DataSet getServices()
         {
-            String sql = "SELECT * FROM DENTISTS WHERE DENTISTID="+DentistID;
-            return DBConnect.ExecuteMultiRowQuery(sql);
+            String sqlQuery = "SELECT * FROM Services";
+            return DBConnect.ExecuteMultiRowQuery(sqlQuery);
         }
     }
 }

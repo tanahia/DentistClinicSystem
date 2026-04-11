@@ -40,7 +40,7 @@ namespace DentistClinicSystem
                    cmbDentistName.Focus();
                    return;
                }
- else  if (txtServiceTitle.Text.Equals(""))
+             else  if (txtServiceTitle.Text.Equals(""))
             {
                 MessageBox.Show("Service Title must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtServiceTitle.Focus();
@@ -69,17 +69,16 @@ namespace DentistClinicSystem
             service.AddService();
             MessageBox.Show("Service added to the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            txtServiceID.Text = Service.GetNextServiceID().ToString("000");
+            txtServiceID.Text = Service.GetNextServiceID().ToString("00");
             cmbDentistName.Items.Clear();
             txtPrice.Clear();
-            txtServiceID.Clear();
             txtServiceTitle.Clear();
             txtServiceTitle.Focus();
         }
 
         private void frmAddService_Load(object sender, EventArgs e)
         {
-            txtServiceID.Text = Service.GetNextServiceID().ToString("000");
+            txtServiceID.Text = Service.GetNextServiceID().ToString("00");
 
 
             DataSet ds = Dentist.getDentists();

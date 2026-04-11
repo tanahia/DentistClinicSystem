@@ -116,13 +116,6 @@ namespace DentistClinicSystem
 
         }
 
-        private void makePrescriptionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmMakePrescription frmMakePrescription = new frmMakePrescription(this);
-            frmMakePrescription.Show();
-        }
-
         private void yearlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -130,5 +123,6 @@ namespace DentistClinicSystem
             frmYearlyRevenueAnalysis.Show();
 
         }
+
     }
 }
