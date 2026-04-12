@@ -32,14 +32,7 @@ namespace DentistClinicSystem
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int i;
-            if (cmbUpdatePatient.Text == "")
-            {
-                MessageBox.Show("Please select a PatientID to update.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cmbUpdatePatient.Focus();
-                return;
-            }
-
-            else if (txtFullName.Text.Equals(""))
+             if (txtFullName.Text.Equals(""))
             {
                 MessageBox.Show("Full Name must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtFullName.Focus();
@@ -58,9 +51,9 @@ namespace DentistClinicSystem
                 txtPhone.Focus();
                 return;
             }
-            else if (!int.TryParse(txtPhone.Text, out i) || !txtPhone.Text.StartsWith("+"))
+            else if (!int.TryParse(txtPhone.Text, out i))
             {
-                MessageBox.Show("Phone number must start with '+' and have only numeric characters expect the first character.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Phone number must have only numeric characters expect the first character.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPhone.Focus();
                 return;
             }
@@ -76,38 +69,86 @@ namespace DentistClinicSystem
                 dtpDateofBirth.Focus();
                 return;
             }
-            else if (dtpDateofBirth.Value >= DateTime.Today)
+            else if (dtpDateofBirth.Value > DateTime.Today)
             {
                 MessageBox.Show("Date of Birth must be a past date.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpDateofBirth.Focus();
                 return;
-            }
-            else if (!rbtnFemale.Checked && !rbtnMale.Checked && !rbtnOther.Checked)
-            {
-                MessageBox.Show("You must choose your sex.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            }         
             else if (txtDentalProblems.Text.Equals(""))
             {
                 MessageBox.Show("Dental problems must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtDentalProblems.Focus();
                 return;
             }
+            Patient patient = Patient.GetPatientByID(Convert.ToInt32(grdPatients.Rows[grdPatients.CurrentCell.RowIndex].Cells[0].Value));
+            patient.FullName = txtFullName.Text;
+            patient.Phone = txtPhone.Text;
+            patient.Address = txtAddress.Text;
+            patient.DateOfBirth= dtpDateofBirth.Value;
+            patient.DentalProblems= txtDentalProblems.Text;
+            patient.HealthProblems= txtHealthProblems.Text;
+            patient.Allergies= txtAllergies.Text;
 
-            
+            patient.UpdatePatient();
+
             MessageBox.Show("Patient is updated in the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtFullName.Clear();
             txtPhone.Clear();
             txtAddress.Clear();
             txtDentalProblems.Clear();
-            rbtnFemale.Checked = false;
-            rbtnMale.Checked = false;
-            rbtnOther.Checked = false;
             txtHealthProblems.Clear();
             txtAllergies.Clear();
-            cmbUpdatePatient.Items.Clear();
             dtpDateofBirth.Value = DateTime.Now; // Resetting the DateTimePicker to the current date
+            grdPatients.Visible = false;
+            grpPatients.Visible = false;
             txtFullName.Focus();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            int i;
+            if (txtSearch.Text.Equals(""))
+            {
+                MessageBox.Show("Dentist Name must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSearch.Focus();
+                return;
+            }
+            else if (int.TryParse(txtSearch.Text, out i))
+            {
+                MessageBox.Show("Full Name must be alphabetic.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSearch.Focus();
+                return;
+            }
+            grdPatients.DataSource = Patient.FindPatients(txtSearch.Text).Tables[0];
+
+            if (grdPatients.Rows.Count == 0)
+            {
+
+                MessageBox.Show("No Data Found");
+
+                txtSearch.Focus();
+
+                return;
+
+            }
+            grdPatients.Visible = true;
+            txtSearch.Clear();
+            txtSearch.Focus();
+        }
+
+        private void grdPatients_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ID = Convert.ToInt32(grdPatients.Rows[grdPatients.CurrentCell.RowIndex].Cells[0].Value);
+            Patient patient = Patient.GetPatientByID(ID);
+            txtFullName.Text = patient.FullName;
+            txtPhone.Text = patient.Phone;
+            txtAddress.Text = patient.Address;
+            dtpDateofBirth.Value = patient.DateOfBirth;
+            txtDentalProblems.Text = patient.DentalProblems;
+            txtHealthProblems.Text = patient.HealthProblems;
+            txtAllergies.Text = patient.Allergies;
+            grpPatients.Visible = true;
         }
     }
 }

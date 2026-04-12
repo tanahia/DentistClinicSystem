@@ -35,7 +35,7 @@ namespace DentistClinicSystem
             int i;
             if (txtSearch.Text.Equals(""))
             {
-                MessageBox.Show("DEntist Name must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Dentist Name must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSearch.Focus();
                 return;
             }
@@ -57,9 +57,7 @@ namespace DentistClinicSystem
                 return;
 
             }
-            grdDentists.Visible = true;
-
-           
+            grdDentists.Visible = true;   
             txtSearch.Clear();
             txtSearch.Focus();
         }

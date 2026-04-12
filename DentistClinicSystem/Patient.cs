@@ -76,5 +76,30 @@ namespace DentistClinicSystem
             String sqlQuery = "SELECT * FROM Patients";
             return DBConnect.ExecuteMultiRowQuery(sqlQuery);
         }
+        public static DataSet FindPatients(string name)
+        {
+            string sqlQuery = "SELECT  PATIENTID, FULLNAME, PHONENUMBER, HOMEADDRESS, DATEOFBIRTH, HEALTHPROBLEMS, DENTALPROBLEMS, ALLERGIES FROM Patients " + "WHERE FULLNAME LIKE '%" + name + "%' ORDER BY FULLNAME";
+            return DBConnect.ExecuteMultiRowQuery(sqlQuery);
+        }
+        public static Patient GetPatientByID(int ID)
+        {
+            string sqlQuery = "SELECT * FROM Patients WHERE PATIENTID = " + ID;
+            OracleDataReader reader = DBConnect.ExecuteSingleRowQuery(sqlQuery);
+            reader.Read();
+            string fullName = reader.GetString(1);
+            string phone = reader.GetString(2);
+            string address = reader.GetString(3);
+            DateTime dateofbirth = reader.GetDateTime(4);
+            string healthproblems = reader.GetString(5);
+            string dentalproblems = reader.GetString(6);
+            string allergies = reader.GetString(7);
+            reader.Close();
+            return new Patient(ID, fullName, phone, address, dateofbirth, healthproblems, dentalproblems, allergies);
+        }
+        public void UpdatePatient()
+        {
+            string sqlQuery = "UPDATE Patients SET FULLNAME = '" + FullName + "', PHONENUMBER = '" + Phone + "', HOMEADDRESS = '" + Address + "', DATEOFBIRTH = '" + DateOfBirth + "', HEALTHPROBLEMS= '" + HealthProblems + "', DENTALPROBLEMS = '" + DentalProblems+"', ALLERGIES = '" + Allergies + "' WHERE PATIENTID = " + PatientID;
+            DBConnect.ExecuteNonQuery(sqlQuery);
+        }
     }
 }

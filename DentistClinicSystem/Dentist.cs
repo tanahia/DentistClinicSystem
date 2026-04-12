@@ -88,7 +88,7 @@ namespace DentistClinicSystem
             return new Dentist(iD, fullName, phone, address, bio);
         }
 
-        internal void UpdateDentist()
+       public void UpdateDentist()
         {
            string sqlQuery = "UPDATE DENTISTS SET FULLNAME = '" + FullName + "', PHONENUMBER = '" + Phone + "', HOMEADDRESS = '" + Address + "', BIO = '" + Bio + "' WHERE DENTISTID = " + DentistID;
             DBConnect.ExecuteNonQuery(sqlQuery);
