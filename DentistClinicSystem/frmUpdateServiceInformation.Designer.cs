@@ -28,82 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            grpUpdateServiceInformation = new GroupBox();
+            grpServices = new GroupBox();
             label3 = new Label();
             cmbDentistID = new ComboBox();
             txtPrice = new TextBox();
-            cmbServiceUpdate = new ComboBox();
             btnUpdate = new Button();
             txtServiceTitle = new TextBox();
             label2 = new Label();
             label1 = new Label();
             btnExit = new Button();
-            grpUpdateServiceInformation.SuspendLayout();
+            grpUpdate = new GroupBox();
+            grdServices = new DataGridView();
+            txtSearch = new TextBox();
+            btnSearch = new Button();
+            grpServices.SuspendLayout();
+            grpUpdate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)grdServices).BeginInit();
             SuspendLayout();
             // 
-            // grpUpdateServiceInformation
+            // grpServices
             // 
-            grpUpdateServiceInformation.Controls.Add(label3);
-            grpUpdateServiceInformation.Controls.Add(cmbDentistID);
-            grpUpdateServiceInformation.Controls.Add(txtPrice);
-            grpUpdateServiceInformation.Controls.Add(cmbServiceUpdate);
-            grpUpdateServiceInformation.Controls.Add(btnUpdate);
-            grpUpdateServiceInformation.Controls.Add(txtServiceTitle);
-            grpUpdateServiceInformation.Controls.Add(label2);
-            grpUpdateServiceInformation.Controls.Add(label1);
-            grpUpdateServiceInformation.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grpUpdateServiceInformation.ForeColor = SystemColors.HotTrack;
-            grpUpdateServiceInformation.Location = new Point(27, 40);
-            grpUpdateServiceInformation.Name = "grpUpdateServiceInformation";
-            grpUpdateServiceInformation.RightToLeft = RightToLeft.No;
-            grpUpdateServiceInformation.Size = new Size(747, 450);
-            grpUpdateServiceInformation.TabIndex = 3;
-            grpUpdateServiceInformation.TabStop = false;
-            grpUpdateServiceInformation.Text = "Choose service to update:";
+            grpServices.Controls.Add(label3);
+            grpServices.Controls.Add(cmbDentistID);
+            grpServices.Controls.Add(txtPrice);
+            grpServices.Controls.Add(btnUpdate);
+            grpServices.Controls.Add(txtServiceTitle);
+            grpServices.Controls.Add(label2);
+            grpServices.Controls.Add(label1);
+            grpServices.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpServices.ForeColor = SystemColors.HotTrack;
+            grpServices.Location = new Point(49, 318);
+            grpServices.Name = "grpServices";
+            grpServices.RightToLeft = RightToLeft.No;
+            grpServices.Size = new Size(885, 336);
+            grpServices.TabIndex = 3;
+            grpServices.TabStop = false;
+            grpServices.Text = "Choose service to update:";
+            grpServices.Visible = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(24, 114);
+            label3.Location = new Point(12, 159);
             label3.Name = "label3";
             label3.Size = new Size(104, 23);
             label3.TabIndex = 22;
             label3.Text = "Dentist ID:";
-
             // 
             // cmbDentistID
             // 
             cmbDentistID.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDentistID.FormattingEnabled = true;
-            cmbDentistID.Items.AddRange(new object[] { "001" });
-            cmbDentistID.Location = new Point(203, 106);
+            cmbDentistID.Location = new Point(191, 151);
             cmbDentistID.Name = "cmbDentistID";
             cmbDentistID.Size = new Size(192, 31);
             cmbDentistID.TabIndex = 21;
             // 
             // txtPrice
             // 
-            txtPrice.Location = new Point(199, 217);
+            txtPrice.Location = new Point(191, 103);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(53, 30);
             txtPrice.TabIndex = 20;
-            txtPrice.Text = "50";
-            // 
-            // cmbServiceUpdate
-            // 
-            cmbServiceUpdate.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbServiceUpdate.FormattingEnabled = true;
-            cmbServiceUpdate.Items.AddRange(new object[] { "001" });
-            cmbServiceUpdate.Location = new Point(20, 49);
-            cmbServiceUpdate.Name = "cmbServiceUpdate";
-            cmbServiceUpdate.Size = new Size(192, 31);
-            cmbServiceUpdate.TabIndex = 19;
             // 
             // btnUpdate
             // 
             btnUpdate.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpdate.ForeColor = SystemColors.HotTrack;
-            btnUpdate.Location = new Point(199, 341);
+            btnUpdate.Location = new Point(191, 239);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(196, 56);
             btnUpdate.TabIndex = 8;
@@ -113,16 +105,15 @@
             // 
             // txtServiceTitle
             // 
-            txtServiceTitle.Location = new Point(199, 167);
+            txtServiceTitle.Location = new Point(191, 53);
             txtServiceTitle.Name = "txtServiceTitle";
             txtServiceTitle.Size = new Size(141, 30);
             txtServiceTitle.TabIndex = 2;
-            txtServiceTitle.Text = "Teeth Removal";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(20, 217);
+            label2.Location = new Point(12, 103);
             label2.Name = "label2";
             label2.Size = new Size(61, 23);
             label2.TabIndex = 2;
@@ -131,7 +122,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(20, 167);
+            label1.Location = new Point(12, 53);
             label1.Name = "label1";
             label1.Size = new Size(125, 23);
             label1.TabIndex = 1;
@@ -141,7 +132,7 @@
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(702, 12);
+            btnExit.Location = new Point(878, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 20;
@@ -149,24 +140,71 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
+            // grpUpdate
+            // 
+            grpUpdate.Controls.Add(grdServices);
+            grpUpdate.Controls.Add(txtSearch);
+            grpUpdate.Controls.Add(btnSearch);
+            grpUpdate.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpUpdate.ForeColor = SystemColors.HotTrack;
+            grpUpdate.Location = new Point(49, 25);
+            grpUpdate.Name = "grpUpdate";
+            grpUpdate.Size = new Size(747, 272);
+            grpUpdate.TabIndex = 22;
+            grpUpdate.TabStop = false;
+            grpUpdate.Text = "Enter Service Title:";
+            // 
+            // grdServices
+            // 
+            grdServices.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdServices.Location = new Point(40, 110);
+            grdServices.Name = "grdServices";
+            grdServices.RowHeadersWidth = 51;
+            grdServices.Size = new Size(668, 121);
+            grdServices.TabIndex = 15;
+            grdServices.Visible = false;
+            grdServices.CellContentClick += grdServices_CellContentClick;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(92, 42);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(260, 30);
+            txtSearch.TabIndex = 14;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = SystemColors.HotTrack;
+            btnSearch.Location = new Point(462, 29);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(143, 48);
+            btnSearch.TabIndex = 13;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
             // frmUpdateServiceInformation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 507);
+            ClientSize = new Size(981, 684);
+            Controls.Add(grpUpdate);
             Controls.Add(btnExit);
-            Controls.Add(grpUpdateServiceInformation);
+            Controls.Add(grpServices);
             Name = "frmUpdateServiceInformation";
             Text = "Dentist Clinic System - [Update Service Information]";
-            grpUpdateServiceInformation.ResumeLayout(false);
-            grpUpdateServiceInformation.PerformLayout();
+            grpServices.ResumeLayout(false);
+            grpServices.PerformLayout();
+            grpUpdate.ResumeLayout(false);
+            grpUpdate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)grdServices).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox grpUpdateServiceInformation;
-        private ComboBox cmbServiceUpdate;
+        private GroupBox grpServices;
         private Button btnUpdate;
         private TextBox txtServiceTitle;
         private Label label2;
@@ -175,5 +213,9 @@
         private TextBox txtPrice;
         private Label label3;
         private ComboBox cmbDentistID;
+        private GroupBox grpUpdate;
+        private DataGridView grdServices;
+        private TextBox txtSearch;
+        private Button btnSearch;
     }
 }

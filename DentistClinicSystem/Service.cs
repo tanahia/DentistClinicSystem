@@ -13,9 +13,10 @@ namespace DentistClinicSystem
     public class Service
     {
         public int ServiceID { get; set; }
-        public static string DentistID { get; set; }
-        public string ServiceTitle { get; set; }
         public decimal Price { get; set; }
+        public string ServiceTitle { get; set; }
+        public string DentistID { get; set; }
+     
 
         
         public Service() : this(0, "", 0,"") { }
@@ -62,6 +63,27 @@ namespace DentistClinicSystem
         {
             String sqlQuery = "SELECT * FROM Services";
             return DBConnect.ExecuteMultiRowQuery(sqlQuery);
+        }
+        public static DataSet FindServices(string name)
+        {
+            string sqlQuery = "SELECT SERVICEID, SERVICETITLE, PRICE, DENTISTID FROM Services " + "WHERE SERVICETITLE LIKE '%" + name + "%' ORDER BY SERVICETITLE";
+            return DBConnect.ExecuteMultiRowQuery(sqlQuery);
+        }
+        public static Service GetServiceByID(int ID)
+        {
+            string sqlQuery = "SELECT * FROM Services WHERE SERVICEID = " + ID;
+            OracleDataReader reader = DBConnect.ExecuteSingleRowQuery(sqlQuery);
+            reader.Read();
+            string servicetitle = reader.GetString(1);
+            decimal price = reader.GetDecimal(2);
+            string dentistid = reader.GetString(3);
+            reader.Close();
+            return new Service(ID, servicetitle, price, dentistid);
+        }
+        public void UpdateService()
+        {
+            string sqlQuery = "UPDATE Services SET SERVICETITLE = '" + ServiceTitle + "', PRICE = '" + Price+ "' WHERE SERVICEID = "+ServiceID;
+            DBConnect.ExecuteNonQuery(sqlQuery);
         }
     }
 }

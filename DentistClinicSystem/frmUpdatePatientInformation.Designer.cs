@@ -80,6 +80,7 @@
             grpPatients.TabIndex = 2;
             grpPatients.TabStop = false;
             grpPatients.Text = "Choose patient to update:";
+            grpPatients.Visible = false;
             // 
             // dtpDateofBirth
             // 

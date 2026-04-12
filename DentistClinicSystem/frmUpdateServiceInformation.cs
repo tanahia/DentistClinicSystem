@@ -27,21 +27,14 @@ namespace DentistClinicSystem
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int i;
-            if (cmbServiceUpdate.Text == "")
-            {
-                MessageBox.Show("Please select a ServiceID to update.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cmbServiceUpdate.Focus();
-                return;
-            }
-
-            else if (cmbDentistID.Text == "")
+            if (cmbDentistID.Text == "")
             {
                 MessageBox.Show("Please select a ServiceID to update.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 cmbDentistID.Focus();
                 return;
             }
-        
+
             else if (txtServiceTitle.Text.Equals(""))
             {
                 MessageBox.Show("Service Title must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -66,22 +59,81 @@ namespace DentistClinicSystem
                 txtPrice.Focus();
                 return;
             }
-            
-            
-            
+            Service service= Service.GetServiceByID(Convert.ToInt32(grdServices.Rows[grdServices.CurrentCell.RowIndex].Cells[0].Value));
+            service.ServiceTitle = txtServiceTitle.Text;
+            service.Price = Convert.ToDecimal(txtPrice.Text);
+            service.UpdateService();
+
             MessageBox.Show("Service  is updated in the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             cmbDentistID.Items.Clear();
             txtPrice.Clear();
             txtServiceTitle.Clear();
-            cmbServiceUpdate.Items.Clear();
-            cmbDentistID.Focus();
+            grdServices.Visible = false;
+            grpServices.Visible = false;
+            txtServiceTitle.Focus();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        public void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
             parent.Visible = true;
         }
 
+        public void btnSearch_Click(object sender, EventArgs e)
+        {
+            int i;
+            if (txtSearch.Text.Equals(""))
+            {
+                MessageBox.Show("Dentist Name must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSearch.Focus();
+                return;
+            }
+            else if (int.TryParse(txtSearch.Text, out i))
+            {
+                MessageBox.Show("Full Name must be alphabetic.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSearch.Focus();
+                return;
+            }
+            grdServices.DataSource = Service.FindServices(txtSearch.Text).Tables[0];
+
+            if (grdServices.Rows.Count == 0)
+            {
+
+                MessageBox.Show("No Data Found");
+
+                txtSearch.Focus();
+
+                return;
+
+            }
+            grdServices.Visible = true;
+            txtSearch.Clear();
+            txtSearch.Focus();
+        }
+
+        private void grdServices_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ID = Convert.ToInt32(grdServices.Rows[grdServices.CurrentCell.RowIndex].Cells[0].Value);
+            Service service=Service.GetServiceByID(ID);
+            txtServiceTitle.Text = service.ServiceTitle;
+            txtPrice.Text = service.Price.ToString();
+
+            DataSet dataSet = Dentist.getDentists();
+            int typeIndex = 0;
+            cmbDentistID.Items.Clear();
+
+            for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+            {
+                cmbDentistID.Items.Add(dataSet.Tables[0].Rows[i][0] +" - "+dataSet.Tables[0].Rows[i][1]);
+                if (dataSet.Tables[0].Rows[i][0].Equals(service.DentistID))
+                {
+                    typeIndex = i;
+                }
+            }
+           cmbDentistID.SelectedIndex = typeIndex;
+           grpServices.Visible = true;
+            
+        }
     }
 }
