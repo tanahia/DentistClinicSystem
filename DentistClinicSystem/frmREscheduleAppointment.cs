@@ -26,30 +26,27 @@ namespace DentistClinicSystem
         }
         private void btnReschedule_Click(object sender, EventArgs e)
         {
-            if (cmbRescheduleAppointment.Text == "")
-            {
-                MessageBox.Show("Please select a AppointmentID to reschedule appointment.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                cmbRescheduleAppointment.Focus();
-                return;
-            }
-            else if (dtpAppointmentDate.Value.Equals(DateTime.Today))
+            if (dtpAppointmentDate.Value.Equals(DateTime.Today))
             {
                 MessageBox.Show("Appointment Date must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpAppointmentDate.Focus();
                 return;
             }
-            else if (dtpAppointmentDate.Value >= DateTime.Today)
+            else if (dtpAppointmentDate.Value < DateTime.Today)
             {
-                MessageBox.Show("Appointment Date must be a past date.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Appointment Date must be a future date.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpAppointmentDate.Focus();
                 return;
             }
-           
+            Appointment appointment = Appointment.GetAppointmentByID(Convert.ToInt32(grdAppointments.Rows[grdAppointments.CurrentCell.RowIndex].Cells[0].Value));
+            appointment.AptDate = dtpAppointmentDate.Value;
+            appointment.UpdateAppointment();
+
             MessageBox.Show("Apointment rescheduled", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            dtpAppointmentDate.Value = DateTime.Now;
-            cmbRescheduleAppointment.Items.Clear();
-            cmbRescheduleAppointment.Focus();
+            dtpSearch.Value = DateTime.Today;
+            grdAppointments.Visible = false;
+            grpRescheduleAppointment.Visible = false;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -61,6 +58,44 @@ namespace DentistClinicSystem
         private void cmbRescheduleAppointment_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (dtpSearch.Value < DateTime.Today)
+            {
+                MessageBox.Show("Appointment Date must be a today or future date.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtpAppointmentDate.Focus();
+                return;
+            }
+            grdAppointments.DataSource = Appointment.FindAppointments(dtpSearch.Value).Tables[0];
+            if (grdAppointments.Rows.Count == 0)
+            {
+
+                MessageBox.Show("No Data Found");
+
+                dtpSearch.Focus();
+
+                return;
+
+            }
+            grdAppointments.Visible = true;
+            dtpSearch.Value = DateTime.Today;
+            dtpSearch.Focus();
+        }
+
+        private void frmRescheduleAppointment_Load(object sender, EventArgs e)
+        {
+            dtpSearch.Value = DateTime.Today;
+            dtpAppointmentDate.Value = DateTime.Today;
+        }
+
+        private void grdAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ID = Convert.ToInt32(grdAppointments.Rows[grdAppointments.CurrentCell.RowIndex].Cells[0].Value);          
+            Appointment appointment = Appointment.GetAppointmentByID(ID);
+            dtpAppointmentDate.Value = appointment.AptDate;
+            grpRescheduleAppointment.Visible = true;    
         }
     }
 }

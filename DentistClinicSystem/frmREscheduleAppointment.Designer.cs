@@ -34,8 +34,13 @@
             dtpAppointmentDate = new DateTimePicker();
             grpRescheduleAppointment = new GroupBox();
             btnReschedule = new Button();
-            cmbRescheduleAppointment = new ComboBox();
+            grpUpdate = new GroupBox();
+            dtpSearch = new DateTimePicker();
+            grdAppointments = new DataGridView();
+            btnSearch = new Button();
             grpRescheduleAppointment.SuspendLayout();
+            grpUpdate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)grdAppointments).BeginInit();
             SuspendLayout();
             // 
             // btnSave
@@ -53,7 +58,7 @@
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(683, 0);
+            btnExit.Location = new Point(1088, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 21;
@@ -76,31 +81,30 @@
             dtpAppointmentDate.Name = "dtpAppointmentDate";
             dtpAppointmentDate.Size = new Size(250, 30);
             dtpAppointmentDate.TabIndex = 24;
-            dtpAppointmentDate.Value = new DateTime(2025, 11, 25, 0, 0, 0, 0);
+            dtpAppointmentDate.Value = new DateTime(2026, 4, 18, 0, 0, 0, 0);
             // 
             // grpRescheduleAppointment
             // 
             grpRescheduleAppointment.Controls.Add(btnReschedule);
-            grpRescheduleAppointment.Controls.Add(cmbRescheduleAppointment);
             grpRescheduleAppointment.Controls.Add(dtpAppointmentDate);
             grpRescheduleAppointment.Controls.Add(label3);
-            grpRescheduleAppointment.Controls.Add(btnExit);
             grpRescheduleAppointment.Controls.Add(btnSave);
             grpRescheduleAppointment.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpRescheduleAppointment.ForeColor = SystemColors.HotTrack;
-            grpRescheduleAppointment.Location = new Point(22, 24);
+            grpRescheduleAppointment.Location = new Point(44, 399);
             grpRescheduleAppointment.Name = "grpRescheduleAppointment";
             grpRescheduleAppointment.RightToLeft = RightToLeft.No;
-            grpRescheduleAppointment.Size = new Size(755, 399);
+            grpRescheduleAppointment.Size = new Size(1083, 260);
             grpRescheduleAppointment.TabIndex = 3;
             grpRescheduleAppointment.TabStop = false;
-            grpRescheduleAppointment.Text = "Choose the Appointment ID:";
+            grpRescheduleAppointment.Text = "Choose the Appointment Date:";
+            grpRescheduleAppointment.Visible = false;
             // 
             // btnReschedule
             // 
             btnReschedule.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReschedule.ForeColor = SystemColors.HotTrack;
-            btnReschedule.Location = new Point(251, 235);
+            btnReschedule.Location = new Point(251, 164);
             btnReschedule.Name = "btnReschedule";
             btnReschedule.Size = new Size(196, 56);
             btnReschedule.TabIndex = 26;
@@ -108,27 +112,66 @@
             btnReschedule.UseVisualStyleBackColor = true;
             btnReschedule.Click += btnReschedule_Click;
             // 
-            // cmbRescheduleAppointment
+            // grpUpdate
             // 
-            cmbRescheduleAppointment.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbRescheduleAppointment.FormattingEnabled = true;
-            cmbRescheduleAppointment.Items.AddRange(new object[] { "00001" });
-            cmbRescheduleAppointment.Location = new Point(10, 43);
-            cmbRescheduleAppointment.Name = "cmbRescheduleAppointment";
-            cmbRescheduleAppointment.Size = new Size(192, 31);
-            cmbRescheduleAppointment.TabIndex = 25;
-            cmbRescheduleAppointment.SelectedIndexChanged += cmbRescheduleAppointment_SelectedIndexChanged;
+            grpUpdate.Controls.Add(dtpSearch);
+            grpUpdate.Controls.Add(grdAppointments);
+            grpUpdate.Controls.Add(btnSearch);
+            grpUpdate.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpUpdate.ForeColor = SystemColors.HotTrack;
+            grpUpdate.Location = new Point(41, 65);
+            grpUpdate.Name = "grpUpdate";
+            grpUpdate.Size = new Size(1086, 272);
+            grpUpdate.TabIndex = 23;
+            grpUpdate.TabStop = false;
+            grpUpdate.Text = "Enter appointment date:";
+            // 
+            // dtpSearch
+            // 
+            dtpSearch.Location = new Point(40, 39);
+            dtpSearch.Name = "dtpSearch";
+            dtpSearch.Size = new Size(250, 30);
+            dtpSearch.TabIndex = 25;
+            dtpSearch.Value = new DateTime(2026, 4, 18, 0, 0, 0, 0);
+            // 
+            // grdAppointments
+            // 
+            grdAppointments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdAppointments.Location = new Point(40, 110);
+            grdAppointments.Name = "grdAppointments";
+            grdAppointments.RowHeadersWidth = 51;
+            grdAppointments.Size = new Size(668, 121);
+            grdAppointments.TabIndex = 15;
+            grdAppointments.Visible = false;
+            grdAppointments.CellContentClick += grdAppointments_CellContentClick;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = SystemColors.HotTrack;
+            btnSearch.Location = new Point(462, 29);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(143, 48);
+            btnSearch.TabIndex = 13;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // frmRescheduleAppointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1172, 683);
+            Controls.Add(grpUpdate);
             Controls.Add(grpRescheduleAppointment);
+            Controls.Add(btnExit);
             Name = "frmRescheduleAppointment";
             Text = "Dentist Clinic System - [Reschedule Appointment]";
+            Load += frmRescheduleAppointment_Load;
             grpRescheduleAppointment.ResumeLayout(false);
             grpRescheduleAppointment.PerformLayout();
+            grpUpdate.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)grdAppointments).EndInit();
             ResumeLayout(false);
         }
 
@@ -139,7 +182,10 @@
         private Label label3;
         private DateTimePicker dtpAppointmentDate;
         private GroupBox grpRescheduleAppointment;
-        private ComboBox cmbRescheduleAppointment;
         private Button btnReschedule;
+        private GroupBox grpUpdate;
+        private DataGridView grdAppointments;
+        private Button btnSearch;
+        private DateTimePicker dtpSearch;
     }
 }

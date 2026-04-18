@@ -63,7 +63,7 @@
             grpServices.Size = new Size(885, 336);
             grpServices.TabIndex = 3;
             grpServices.TabStop = false;
-            grpServices.Text = "Choose service to update:";
+            grpServices.Text = "Update Service Information:";
             grpServices.Visible = false;
             // 
             // label3
