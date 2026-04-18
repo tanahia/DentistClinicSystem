@@ -33,14 +33,7 @@ namespace DentistClinicSystem
         private void btnSave_Click(object sender, EventArgs e)
         {
             int i;
-            if (cmbDentistName.Text == "")
-               {
-                   MessageBox.Show("Please select a DentistID to add service.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                   cmbDentistName.Focus();
-                   return;
-               }
-             else  if (txtServiceTitle.Text.Equals(""))
+              if (txtServiceTitle.Text.Equals(""))
             {
                 MessageBox.Show("Service Title must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtServiceTitle.Focus();
@@ -65,12 +58,11 @@ namespace DentistClinicSystem
                 return;
             }
 
-            Service service = new Service(Convert.ToInt32(txtServiceID.Text), txtServiceTitle.Text, Convert.ToDecimal(txtPrice.Text), cmbDentistName.Text.Substring(0, 2));
+            Service service = new Service(Convert.ToInt32(txtServiceID.Text), txtServiceTitle.Text, Convert.ToDecimal(txtPrice.Text));
             service.AddService();
             MessageBox.Show("Service added to the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             txtServiceID.Text = Service.GetNextServiceID().ToString("00");
-            cmbDentistName.Items.Clear();
             txtPrice.Clear();
             txtServiceTitle.Clear();
             txtServiceTitle.Focus();
@@ -80,20 +72,6 @@ namespace DentistClinicSystem
         {
             txtServiceID.Text = Service.GetNextServiceID().ToString("00");
 
-
-            DataSet ds = Dentist.getDentists();
-
-
-            cmbDentistName.Items.Clear();
-
-
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-
-            {
-
-                cmbDentistName.Items.Add(ds.Tables[0].Rows[i][0] + " - " + ds.Tables[0].Rows[i][1]);
-
-            }
         }
     }
 }

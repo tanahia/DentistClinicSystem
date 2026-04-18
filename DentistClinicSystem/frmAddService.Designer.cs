@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             grpAddDentist = new GroupBox();
-            label4 = new Label();
             txtServiceID = new TextBox();
-            cmbDentistName = new ComboBox();
             label3 = new Label();
             btnSave = new Button();
             txtPrice = new TextBox();
@@ -44,9 +42,7 @@
             // 
             // grpAddDentist
             // 
-            grpAddDentist.Controls.Add(label4);
             grpAddDentist.Controls.Add(txtServiceID);
-            grpAddDentist.Controls.Add(cmbDentistName);
             grpAddDentist.Controls.Add(label3);
             grpAddDentist.Controls.Add(btnSave);
             grpAddDentist.Controls.Add(txtPrice);
@@ -63,29 +59,12 @@
             grpAddDentist.TabStop = false;
             grpAddDentist.Text = "Enter the Details:";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(21, 185);
-            label4.Name = "label4";
-            label4.Size = new Size(104, 23);
-            label4.TabIndex = 14;
-            label4.Text = "Dentist ID:";
-            // 
             // txtServiceID
             // 
             txtServiceID.Location = new Point(185, 43);
             txtServiceID.Name = "txtServiceID";
             txtServiceID.Size = new Size(81, 30);
             txtServiceID.TabIndex = 13;
-            // 
-            // cmbDentistName
-            // 
-            cmbDentistName.FormattingEnabled = true;
-            cmbDentistName.Location = new Point(185, 185);
-            cmbDentistName.Name = "cmbDentistName";
-            cmbDentistName.Size = new Size(151, 31);
-            cmbDentistName.TabIndex = 12;
             // 
             // label3
             // 
@@ -100,7 +79,7 @@
             // 
             btnSave.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.ForeColor = SystemColors.HotTrack;
-            btnSave.Location = new Point(171, 330);
+            btnSave.Location = new Point(175, 274);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(196, 56);
             btnSave.TabIndex = 8;
@@ -177,8 +156,6 @@
         private Button btnSave;
         private Button btnExit;
         private Label label3;
-        private Label label4;
         private TextBox txtServiceID;
-        private ComboBox cmbDentistName;
     }
 }

@@ -27,15 +27,7 @@ namespace DentistClinicSystem
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int i;
-            if (cmbDentistID.Text == "")
-            {
-                MessageBox.Show("Please select a ServiceID to update.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                cmbDentistID.Focus();
-                return;
-            }
-
-            else if (txtServiceTitle.Text.Equals(""))
+           if (txtServiceTitle.Text.Equals(""))
             {
                 MessageBox.Show("Service Title must be entered.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtServiceTitle.Focus();
@@ -66,7 +58,6 @@ namespace DentistClinicSystem
 
             MessageBox.Show("Service  is updated in the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            cmbDentistID.Items.Clear();
             txtPrice.Clear();
             txtServiceTitle.Clear();
             grdServices.Visible = false;
@@ -118,20 +109,6 @@ namespace DentistClinicSystem
             Service service=Service.GetServiceByID(ID);
             txtServiceTitle.Text = service.ServiceTitle;
             txtPrice.Text = service.Price.ToString();
-
-            DataSet dataSet = Dentist.getDentists();
-            int typeIndex = 0;
-            cmbDentistID.Items.Clear();
-
-            for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
-            {
-                cmbDentistID.Items.Add(dataSet.Tables[0].Rows[i][0] +" - "+dataSet.Tables[0].Rows[i][1]);
-                if (dataSet.Tables[0].Rows[i][0].Equals(service.DentistID))
-                {
-                    typeIndex = i;
-                }
-            }
-           cmbDentistID.SelectedIndex = typeIndex;
            grpServices.Visible = true;
             
         }

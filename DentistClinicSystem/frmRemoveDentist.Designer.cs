@@ -28,52 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            btnRemove = new Button();
-            cmbRemoveDentist = new ComboBox();
             btnExit = new Button();
-            groupBox1.SuspendLayout();
+            grpRemove = new GroupBox();
+            btnRemove = new Button();
+            grdDentists = new DataGridView();
+            txtSearch = new TextBox();
+            btnSearch = new Button();
+            grpRemove.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)grdDentists).BeginInit();
             SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btnRemove);
-            groupBox1.Controls.Add(cmbRemoveDentist);
-            groupBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.ForeColor = SystemColors.HotTrack;
-            groupBox1.Location = new Point(26, 33);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(747, 390);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Choose dentist to remove:";
-            // 
-            // btnRemove
-            // 
-            btnRemove.ForeColor = SystemColors.HotTrack;
-            btnRemove.Location = new Point(26, 162);
-            btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(187, 59);
-            btnRemove.TabIndex = 1;
-            btnRemove.Text = "Remove";
-            btnRemove.UseVisualStyleBackColor = true;
-            btnRemove.Click += btnRemove_Click;
-            // 
-            // cmbRemoveDentist
-            // 
-            cmbRemoveDentist.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbRemoveDentist.FormattingEnabled = true;
-            cmbRemoveDentist.Items.AddRange(new object[] { "001" });
-            cmbRemoveDentist.Location = new Point(21, 62);
-            cmbRemoveDentist.Name = "cmbRemoveDentist";
-            cmbRemoveDentist.Size = new Size(192, 33);
-            cmbRemoveDentist.TabIndex = 0;
             // 
             // btnExit
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(701, 3);
+            btnExit.Location = new Point(954, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 6;
@@ -81,24 +50,84 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
+            // grpRemove
+            // 
+            grpRemove.Controls.Add(btnRemove);
+            grpRemove.Controls.Add(grdDentists);
+            grpRemove.Controls.Add(txtSearch);
+            grpRemove.Controls.Add(btnSearch);
+            grpRemove.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpRemove.ForeColor = SystemColors.HotTrack;
+            grpRemove.Location = new Point(45, 42);
+            grpRemove.Name = "grpRemove";
+            grpRemove.Size = new Size(987, 593);
+            grpRemove.TabIndex = 2;
+            grpRemove.TabStop = false;
+            grpRemove.Text = "Enter Dentist Name:";
+            // 
+            // btnRemove
+            // 
+            btnRemove.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRemove.ForeColor = SystemColors.HotTrack;
+            btnRemove.Location = new Point(314, 295);
+            btnRemove.Name = "btnRemove";
+            btnRemove.Size = new Size(242, 73);
+            btnRemove.TabIndex = 16;
+            btnRemove.Text = "Remove";
+            btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.Click += btnRemove_Click;
+            // 
+            // grdDentists
+            // 
+            grdDentists.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdDentists.Location = new Point(40, 110);
+            grdDentists.Name = "grdDentists";
+            grdDentists.RowHeadersWidth = 51;
+            grdDentists.Size = new Size(668, 121);
+            grdDentists.TabIndex = 15;
+            grdDentists.Visible = false;
+            grdDentists.CellContentClick += grdDentists_CellContentClick;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(92, 42);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(260, 30);
+            txtSearch.TabIndex = 14;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = SystemColors.HotTrack;
+            btnSearch.Location = new Point(468, 29);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(143, 48);
+            btnSearch.TabIndex = 13;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
             // frmRemoveDentist
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1090, 661);
+            Controls.Add(grpRemove);
             Controls.Add(btnExit);
-            Controls.Add(groupBox1);
             Name = "frmRemoveDentist";
             Text = "Dentist Clinic System - [Remove Dentist]";
-            groupBox1.ResumeLayout(false);
+            grpRemove.ResumeLayout(false);
+            grpRemove.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)grdDentists).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private GroupBox groupBox1;
-        private ComboBox cmbRemoveDentist;
-        private Button btnRemove;
         private Button btnExit;
+        private GroupBox grpRemove;
+        private DataGridView grdDentists;
+        private TextBox txtSearch;
+        private Button btnSearch;
+        private Button btnRemove;
     }
 }

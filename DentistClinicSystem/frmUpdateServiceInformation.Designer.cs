@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             grpServices = new GroupBox();
-            label3 = new Label();
-            cmbDentistID = new ComboBox();
             txtPrice = new TextBox();
             btnUpdate = new Button();
             txtServiceTitle = new TextBox();
@@ -48,8 +46,6 @@
             // 
             // grpServices
             // 
-            grpServices.Controls.Add(label3);
-            grpServices.Controls.Add(cmbDentistID);
             grpServices.Controls.Add(txtPrice);
             grpServices.Controls.Add(btnUpdate);
             grpServices.Controls.Add(txtServiceTitle);
@@ -66,24 +62,6 @@
             grpServices.Text = "Update Service Information:";
             grpServices.Visible = false;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 159);
-            label3.Name = "label3";
-            label3.Size = new Size(104, 23);
-            label3.TabIndex = 22;
-            label3.Text = "Dentist ID:";
-            // 
-            // cmbDentistID
-            // 
-            cmbDentistID.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbDentistID.FormattingEnabled = true;
-            cmbDentistID.Location = new Point(191, 151);
-            cmbDentistID.Name = "cmbDentistID";
-            cmbDentistID.Size = new Size(192, 31);
-            cmbDentistID.TabIndex = 21;
-            // 
             // txtPrice
             // 
             txtPrice.Location = new Point(191, 103);
@@ -95,7 +73,7 @@
             // 
             btnUpdate.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpdate.ForeColor = SystemColors.HotTrack;
-            btnUpdate.Location = new Point(191, 239);
+            btnUpdate.Location = new Point(191, 200);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(196, 56);
             btnUpdate.TabIndex = 8;
@@ -211,8 +189,6 @@
         private Label label1;
         private Button btnExit;
         private TextBox txtPrice;
-        private Label label3;
-        private ComboBox cmbDentistID;
         private GroupBox grpUpdate;
         private DataGridView grdServices;
         private TextBox txtSearch;
