@@ -29,29 +29,52 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            grdPatients = new DataGridView();
+            txtSearch = new TextBox();
             btnRemove = new Button();
-            cmbRemovePatient = new ComboBox();
+            btnSearch = new Button();
             btnExit = new Button();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)grdPatients).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(grdPatients);
+            groupBox1.Controls.Add(txtSearch);
             groupBox1.Controls.Add(btnRemove);
-            groupBox1.Controls.Add(cmbRemovePatient);
+            groupBox1.Controls.Add(btnSearch);
             groupBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.HotTrack;
-            groupBox1.Location = new Point(27, 30);
+            groupBox1.Location = new Point(43, 33);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(747, 390);
+            groupBox1.Size = new Size(930, 520);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Choose patient to remove:";
             // 
+            // grdPatients
+            // 
+            grdPatients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdPatients.Location = new Point(28, 128);
+            grdPatients.Name = "grdPatients";
+            grdPatients.RowHeadersWidth = 51;
+            grdPatients.Size = new Size(668, 121);
+            grdPatients.TabIndex = 18;
+            grdPatients.Visible = false;
+            grdPatients.CellContentClick += grdPatients_CellContentClick;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(80, 60);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(260, 34);
+            txtSearch.TabIndex = 17;
+            // 
             // btnRemove
             // 
             btnRemove.ForeColor = SystemColors.HotTrack;
-            btnRemove.Location = new Point(26, 162);
+            btnRemove.Location = new Point(301, 332);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(187, 59);
             btnRemove.TabIndex = 1;
@@ -59,21 +82,23 @@
             btnRemove.UseVisualStyleBackColor = true;
             btnRemove.Click += btnRemove_Click;
             // 
-            // cmbRemovePatient
+            // btnSearch
             // 
-            cmbRemovePatient.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbRemovePatient.FormattingEnabled = true;
-            cmbRemovePatient.Items.AddRange(new object[] { "001" });
-            cmbRemovePatient.Location = new Point(21, 62);
-            cmbRemovePatient.Name = "cmbRemovePatient";
-            cmbRemovePatient.Size = new Size(192, 33);
-            cmbRemovePatient.TabIndex = 0;
+            btnSearch.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = SystemColors.HotTrack;
+            btnSearch.Location = new Point(456, 47);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(143, 48);
+            btnSearch.TabIndex = 16;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // btnExit
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(702, 3);
+            btnExit.Location = new Point(901, 3);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 7;
@@ -85,12 +110,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1024, 585);
             Controls.Add(btnExit);
             Controls.Add(groupBox1);
             Name = "frmRemovePatient";
             Text = "Dentist Clinic System -[RemovePatient]";
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)grdPatients).EndInit();
             ResumeLayout(false);
         }
 
@@ -98,7 +125,9 @@
 
         private GroupBox groupBox1;
         private Button btnRemove;
-        private ComboBox cmbRemovePatient;
         private Button btnExit;
+        private DataGridView grdPatients;
+        private TextBox txtSearch;
+        private Button btnSearch;
     }
 }

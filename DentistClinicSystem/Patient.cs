@@ -101,5 +101,23 @@ namespace DentistClinicSystem
             string sqlQuery = "UPDATE Patients SET FULLNAME = '" + FullName + "', PHONENUMBER = '" + Phone + "', HOMEADDRESS = '" + Address + "', DATEOFBIRTH = '" + DateOfBirth + "', HEALTHPROBLEMS= '" + HealthProblems + "', DENTALPROBLEMS = '" + DentalProblems+"', ALLERGIES = '" + Allergies + "' WHERE PATIENTID = " + PatientID;
             DBConnect.ExecuteNonQuery(sqlQuery);
         }
+
+        internal void RemovePatient()
+        {
+            string sqlQuery = "DELETE FROM PATIENTS WHERE PATIENTID = " + PatientID;
+            try
+            {
+                DBConnect.ExecuteNonQuery(sqlQuery);
+            }
+            catch (OracleException ex) when (ex.Number == 2292)
+            {
+
+                string deleteAppointmentsQuery = "DELETE FROM APPOINTMENTS WHERE PATIENTID = " + PatientID;
+
+                DBConnect.ExecuteNonQuery(deleteAppointmentsQuery);
+
+                DBConnect.ExecuteNonQuery(sqlQuery);
+            }
+        }
     }
 }

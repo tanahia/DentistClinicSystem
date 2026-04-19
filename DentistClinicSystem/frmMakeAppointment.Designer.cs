@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             grpMakeAppointment = new GroupBox();
             txtAppointmentID = new TextBox();
             label2 = new Label();
             cmbPatientName = new ComboBox();
+            serviceBindingSource = new BindingSource(components);
             cmbDentistName = new ComboBox();
             cmbServiceTitle = new ComboBox();
             dtpAppointmentDate = new DateTimePicker();
@@ -45,6 +47,7 @@
             btnExit = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             grpMakeAppointment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)serviceBindingSource).BeginInit();
             SuspendLayout();
             // 
             // grpMakeAppointment
@@ -95,6 +98,10 @@
             cmbPatientName.Name = "cmbPatientName";
             cmbPatientName.Size = new Size(151, 31);
             cmbPatientName.TabIndex = 22;
+            // 
+            // serviceBindingSource
+            // 
+            serviceBindingSource.DataSource = typeof(Service);
             // 
             // cmbDentistName
             // 
@@ -208,6 +215,7 @@
             Load += frmMakeAppointment_Load;
             grpMakeAppointment.ResumeLayout(false);
             grpMakeAppointment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)serviceBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -229,5 +237,6 @@
         private ComboBox cmbServiceTitle;
         private TextBox txtAppointmentID;
         private Label label2;
+        private BindingSource serviceBindingSource;
     }
 }

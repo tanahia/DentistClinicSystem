@@ -44,7 +44,7 @@ namespace DentistClinicSystem
             }
             else if (int.TryParse(txtSearch.Text, out i))
             {
-                MessageBox.Show("Full Name must be alphabetic.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Dentist Name must be alphabetic.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSearch.Focus();
                 return;
             }
