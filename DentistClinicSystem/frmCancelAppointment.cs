@@ -32,27 +32,67 @@ namespace DentistClinicSystem
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (cmbCancelAppointment.Text == "")
+            if (grdAppointments.CurrentCell == null)
             {
-                MessageBox.Show("Please select a AppointmentID to cancel appointment.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
-                cmbCancelAppointment.Focus();
+                MessageBox.Show("Please select a appointment from the list.");
                 return;
             }
-            DialogResult dialogResult = MessageBox.Show("Are You Sure?",
-            "Confirmation",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
-
-            if (dialogResult == DialogResult.Yes)
+            else
             {
-                MessageBox.Show("Appointment Cancelled.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cmbCancelAppointment.Items.Clear();
-                cmbCancelAppointment.Focus();
+                DialogResult dialogResult = MessageBox.Show("If you proceed with operation all records connected to this appointment will be removed in database. Do you want to continue?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Appointment appointment = Appointment.GetAppointmentByID(Convert.ToInt32(grdAppointments.Rows[grdAppointments.CurrentCell.RowIndex].Cells[0].Value));
+                    appointment.CancelAppointment();
+
+                    grdAppointments.Visible = false;
+                    dtpSearch.Value = DateTime.Today;
+                    dtpSearch.Focus();
+
+                    MessageBox.Show("Appointment Cancelled.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
             }
 
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            int i;
+            if (dtpSearch.Value < DateTime.Today)
+            {
+                MessageBox.Show("Appointment Date must be a today or future date.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtpSearch.Focus();
+                return;
+            }
+            grdAppointments.DataSource = Appointment.FindAppointments(dtpSearch.Value).Tables[0];
 
+            if (grdAppointments.Rows.Count == 0)
+            {
+
+                MessageBox.Show("No Data Found");
+
+                dtpSearch.Focus();
+
+                return;
+
+
+            }
+            grdAppointments.Visible = true;
+        }
+
+        private void grdAppointments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ID = Convert.ToInt32(grdAppointments.Rows[e.RowIndex].Cells[0].Value);
+            Appointment appointment = Appointment.GetAppointmentByID(ID);
+        }
+
+        private void frmCancelAppointment_Load(object sender, EventArgs e)
+        {
+            dtpSearch.Value = DateTime.Today;
+        }
     }
 }

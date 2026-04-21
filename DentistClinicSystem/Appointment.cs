@@ -88,5 +88,11 @@ namespace DentistClinicSystem
             string sqlQuery = "UPDATE Appointments SET APPOINTMENTDATE = '" + AptDate.ToString("dd-MM-yyyy")+ "' WHERE APPOINTMENTID = " + AppointmentID;
             DBConnect.ExecuteNonQuery(sqlQuery);
         }
+
+        internal void CancelAppointment()
+        {
+          string sqlQuery = "DELETE FROM Appointments WHERE APPOINTMENTID = " + AppointmentID;
+            DBConnect.ExecuteNonQuery(sqlQuery);
+        }
     }
 }

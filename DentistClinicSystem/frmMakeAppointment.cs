@@ -67,15 +67,7 @@ namespace DentistClinicSystem
                 return;
             }
 
-            string patientId = cmbPatientName.SelectedValue?.ToString();
-            string dentistId = cmbDentistName.SelectedValue?.ToString();
-            string serviceId = cmbServiceTitle.SelectedValue?.ToString();
-
-            patientId = (patientId ?? "").Trim();
-            dentistId = (dentistId ?? "").Trim();
-            serviceId = (serviceId ?? "").Trim();
-
-            Appointment appointment = new Appointment(Convert.ToInt32(txtAppointmentID.Text), patientId, dentistId, serviceId, dtpAppointmentDate.Value, txtComplaint.Text);
+            Appointment appointment = new Appointment(Convert.ToInt32(txtAppointmentID.Text), cmbServiceTitle.Text.Substring(0,1), cmbPatientName.Text.Substring(0, 1), cmbDentistName.Text.Substring(0, 1), dtpAppointmentDate.Value, txtComplaint.Text);
             appointment.AddAppointment();
 
             MessageBox.Show("Apointment added to the database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -85,7 +77,7 @@ namespace DentistClinicSystem
             cmbDentistName.SelectedIndex = -1;
             cmbServiceTitle.SelectedIndex = -1;
             txtComplaint.Clear();
-            dtpAppointmentDate.Value = DateTime.Now;
+            dtpAppointmentDate.Value = DateTime.Today;
             cmbPatientName.Focus();
         }
 
@@ -97,6 +89,7 @@ namespace DentistClinicSystem
 
         private void frmMakeAppointment_Load(object sender, EventArgs e)
         {
+            dtpAppointmentDate.Value = DateTime.Today;
             txtAppointmentID.Text = Appointment.GetNextAppointmentID().ToString("00");
 
 

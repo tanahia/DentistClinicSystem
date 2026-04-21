@@ -29,16 +29,21 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            dtpSearch = new DateTimePicker();
+            grdAppointments = new DataGridView();
+            btnSearch = new Button();
             btnCancel = new Button();
-            cmbCancelAppointment = new ComboBox();
             btnExit = new Button();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)grdAppointments).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(dtpSearch);
+            groupBox1.Controls.Add(grdAppointments);
+            groupBox1.Controls.Add(btnSearch);
             groupBox1.Controls.Add(btnCancel);
-            groupBox1.Controls.Add(cmbCancelAppointment);
             groupBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.HotTrack;
             groupBox1.Location = new Point(27, 30);
@@ -48,26 +53,47 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Choose appointment to cancel:";
             // 
+            // dtpSearch
+            // 
+            dtpSearch.Location = new Point(40, 59);
+            dtpSearch.Name = "dtpSearch";
+            dtpSearch.Size = new Size(250, 34);
+            dtpSearch.TabIndex = 28;
+            dtpSearch.Value = new DateTime(2026, 4, 18, 0, 0, 0, 0);
+            // 
+            // grdAppointments
+            // 
+            grdAppointments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdAppointments.Location = new Point(40, 130);
+            grdAppointments.Name = "grdAppointments";
+            grdAppointments.RowHeadersWidth = 51;
+            grdAppointments.Size = new Size(668, 121);
+            grdAppointments.TabIndex = 27;
+            grdAppointments.Visible = false;
+            grdAppointments.CellContentClick += grdAppointments_CellContentClick;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = SystemColors.HotTrack;
+            btnSearch.Location = new Point(462, 49);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(143, 48);
+            btnSearch.TabIndex = 26;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
             // btnCancel
             // 
             btnCancel.ForeColor = SystemColors.HotTrack;
-            btnCancel.Location = new Point(26, 162);
+            btnCancel.Location = new Point(246, 291);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(187, 59);
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
-            // 
-            // cmbCancelAppointment
-            // 
-            cmbCancelAppointment.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCancelAppointment.FormattingEnabled = true;
-            cmbCancelAppointment.Items.AddRange(new object[] { "00001" });
-            cmbCancelAppointment.Location = new Point(21, 62);
-            cmbCancelAppointment.Name = "cmbCancelAppointment";
-            cmbCancelAppointment.Size = new Size(192, 33);
-            cmbCancelAppointment.TabIndex = 0;
             // 
             // btnExit
             // 
@@ -90,7 +116,9 @@
             Controls.Add(groupBox1);
             Name = "frmCancelAppointment";
             Text = "Dentist Clinic System - [CancelAppointment]";
+            Load += frmCancelAppointment_Load;
             groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)grdAppointments).EndInit();
             ResumeLayout(false);
         }
 
@@ -98,7 +126,9 @@
 
         private GroupBox groupBox1;
         private Button btnCancel;
-        private ComboBox cmbCancelAppointment;
         private Button btnExit;
+        private DateTimePicker dtpSearch;
+        private DataGridView grdAppointments;
+        private Button btnSearch;
     }
 }
