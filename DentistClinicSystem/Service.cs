@@ -73,7 +73,6 @@ namespace DentistClinicSystem
             reader.Read();
             string servicetitle = reader.GetString(1);
             decimal price = reader.GetDecimal(2);
-            string dentistid = reader.GetString(3);
             reader.Close();
             return new Service(ID, servicetitle, price);
         }
@@ -81,6 +80,24 @@ namespace DentistClinicSystem
         {
             string sqlQuery = "UPDATE Services SET SERVICETITLE = '" + ServiceTitle + "', PRICE = '" + Price+ "' WHERE SERVICEID = "+ServiceID;
             DBConnect.ExecuteNonQuery(sqlQuery);
+        }
+
+        internal void RemoveService()
+        {
+            string sqlQuery = "DELETE FROM SERVICES WHERE SERVICEID = " + ServiceID;
+            try
+            {
+                DBConnect.ExecuteNonQuery(sqlQuery);
+            }
+            catch (OracleException ex) when (ex.Number == 2292)
+            {
+
+                string deleteAppointmentsQuery = "DELETE FROM APPOINTMENTS WHERE SERVICEID = " + ServiceID;
+
+                DBConnect.ExecuteNonQuery(deleteAppointmentsQuery);
+
+                DBConnect.ExecuteNonQuery(sqlQuery);
+            }
         }
     }
 }
