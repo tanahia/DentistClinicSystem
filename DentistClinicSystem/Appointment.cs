@@ -40,7 +40,8 @@ namespace DentistClinicSystem
                 Patient + "','" +
                 Dentist + "','" +
                 AptDate.ToString("dd-MM-yyyy") + "','" +
-                Complaint + "')";
+                Complaint +
+                "', (SELECT PRICE FROM SERVICES WHERE SERVICEID ='"+ServiceTitle+"'))";
             DBConnect.ExecuteNonQuery(sql);
         }
         public static int GetNextAppointmentID()
@@ -93,6 +94,11 @@ namespace DentistClinicSystem
         {
           string sqlQuery = "DELETE FROM Appointments WHERE APPOINTMENTID = " + AppointmentID;
             DBConnect.ExecuteNonQuery(sqlQuery);
+        }
+        public static DataSet getAppointmentDates()
+        {
+            String sqlQuery = "SELECT APPOINTMENTDATE FROM APPOINTMENTS";
+            return DBConnect.ExecuteMultiRowQuery(sqlQuery);
         }
     }
 }

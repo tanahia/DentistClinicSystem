@@ -65,11 +65,15 @@ namespace DentistClinicSystem
                 return null;
             }
         }
-        public static DataSet ExecuteMultiRowQuery(string query)
+        public static DataSet ExecuteMultiRowQuery(string query, OracleParameter[] parameters = null)
         {
 
             OracleConnection conn = OpenConnection();
             OracleCommand cmd = new OracleCommand(query, conn);
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters);
+            }
             OracleDataAdapter da = new OracleDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);

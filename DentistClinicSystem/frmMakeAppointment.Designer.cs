@@ -33,7 +33,6 @@
             txtAppointmentID = new TextBox();
             label2 = new Label();
             cmbPatientName = new ComboBox();
-            serviceBindingSource = new BindingSource(components);
             cmbDentistName = new ComboBox();
             cmbServiceTitle = new ComboBox();
             dtpAppointmentDate = new DateTimePicker();
@@ -44,6 +43,7 @@
             label4 = new Label();
             label1 = new Label();
             lblFullName = new Label();
+            serviceBindingSource = new BindingSource(components);
             btnExit = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             grpMakeAppointment.SuspendLayout();
@@ -67,10 +67,10 @@
             grpMakeAppointment.Controls.Add(lblFullName);
             grpMakeAppointment.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpMakeAppointment.ForeColor = SystemColors.HotTrack;
-            grpMakeAppointment.Location = new Point(22, 51);
+            grpMakeAppointment.Location = new Point(22, 49);
             grpMakeAppointment.Name = "grpMakeAppointment";
             grpMakeAppointment.RightToLeft = RightToLeft.No;
-            grpMakeAppointment.Size = new Size(755, 504);
+            grpMakeAppointment.Size = new Size(932, 492);
             grpMakeAppointment.TabIndex = 2;
             grpMakeAppointment.TabStop = false;
             grpMakeAppointment.Text = "Enter the Details:";
@@ -98,10 +98,6 @@
             cmbPatientName.Name = "cmbPatientName";
             cmbPatientName.Size = new Size(151, 31);
             cmbPatientName.TabIndex = 22;
-            // 
-            // serviceBindingSource
-            // 
-            serviceBindingSource.DataSource = typeof(Service);
             // 
             // cmbDentistName
             // 
@@ -139,7 +135,7 @@
             // 
             btnSave.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.ForeColor = SystemColors.HotTrack;
-            btnSave.Location = new Point(198, 431);
+            btnSave.Location = new Point(187, 414);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(196, 56);
             btnSave.TabIndex = 22;
@@ -191,11 +187,15 @@
             lblFullName.TabIndex = 0;
             lblFullName.Text = "Patient:";
             // 
+            // serviceBindingSource
+            // 
+            serviceBindingSource.DataSource = typeof(Service);
+            // 
             // btnExit
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(705, 12);
+            btnExit.Location = new Point(882, 10);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 21;
@@ -207,7 +207,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 574);
+            ClientSize = new Size(982, 553);
             Controls.Add(grpMakeAppointment);
             Controls.Add(btnExit);
             Name = "frmMakeAppointment";

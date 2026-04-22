@@ -157,10 +157,10 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { nmuDentists, nmuPatients, servicesToolStripMenuItem, appointmentsToolStripMenuItem, adminToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.MaximumSize = new Size(930, 67);
-            menuStrip1.MinimumSize = new Size(930, 67);
+            menuStrip1.MinimumSize = new Size(990, 67);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.ShowItemToolTips = true;
-            menuStrip1.Size = new Size(930, 67);
+            menuStrip1.Size = new Size(990, 67);
             menuStrip1.Stretch = false;
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
@@ -299,7 +299,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveBorder;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(928, 508);
+            ClientSize = new Size(982, 553);
             Controls.Add(btnExit);
             Controls.Add(label1);
             Controls.Add(frmWelcome);
@@ -341,7 +341,7 @@
         private ToolStripMenuItem makeAppointmentToolStripMenuItem;
         private ToolStripMenuItem rescheduleAppointmentToolStripMenuItem;
         private ToolStripMenuItem cancelAppointmentToolStripMenuItem;
-        private ToolStripMenuItem yearlyRevenueAnalysisToolStripMenuItem;
         private Button btnExit;
+        private ToolStripMenuItem yearlyRevenueAnalysisToolStripMenuItem;
     }
 }
