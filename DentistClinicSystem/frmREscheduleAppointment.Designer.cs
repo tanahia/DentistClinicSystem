@@ -58,7 +58,7 @@
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(1088, 12);
+            btnExit.Location = new Point(861, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 21;
@@ -91,10 +91,10 @@
             grpRescheduleAppointment.Controls.Add(btnSave);
             grpRescheduleAppointment.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpRescheduleAppointment.ForeColor = SystemColors.HotTrack;
-            grpRescheduleAppointment.Location = new Point(44, 399);
+            grpRescheduleAppointment.Location = new Point(37, 359);
             grpRescheduleAppointment.Name = "grpRescheduleAppointment";
             grpRescheduleAppointment.RightToLeft = RightToLeft.No;
-            grpRescheduleAppointment.Size = new Size(1083, 260);
+            grpRescheduleAppointment.Size = new Size(896, 260);
             grpRescheduleAppointment.TabIndex = 3;
             grpRescheduleAppointment.TabStop = false;
             grpRescheduleAppointment.Text = "Choose the Appointment Date:";
@@ -119,9 +119,9 @@
             grpUpdate.Controls.Add(btnSearch);
             grpUpdate.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpUpdate.ForeColor = SystemColors.HotTrack;
-            grpUpdate.Location = new Point(41, 65);
+            grpUpdate.Location = new Point(41, 51);
             grpUpdate.Name = "grpUpdate";
-            grpUpdate.Size = new Size(1086, 272);
+            grpUpdate.Size = new Size(892, 272);
             grpUpdate.TabIndex = 23;
             grpUpdate.TabStop = false;
             grpUpdate.Text = "Enter appointment date:";
@@ -161,7 +161,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1172, 683);
+            ClientSize = new Size(982, 753);
             Controls.Add(grpUpdate);
             Controls.Add(grpRescheduleAppointment);
             Controls.Add(btnExit);

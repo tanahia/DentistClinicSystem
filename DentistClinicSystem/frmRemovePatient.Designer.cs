@@ -46,9 +46,9 @@
             groupBox1.Controls.Add(btnSearch);
             groupBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.HotTrack;
-            groupBox1.Location = new Point(43, 33);
+            groupBox1.Location = new Point(43, 71);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(930, 520);
+            groupBox1.Size = new Size(893, 463);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Choose patient to remove:";
@@ -98,7 +98,7 @@
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(901, 3);
+            btnExit.Location = new Point(864, 32);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 7;
@@ -110,7 +110,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1024, 585);
+            ClientSize = new Size(982, 580);
             Controls.Add(btnExit);
             Controls.Add(groupBox1);
             Name = "frmRemovePatient";

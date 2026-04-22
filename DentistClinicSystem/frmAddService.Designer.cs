@@ -51,10 +51,10 @@
             grpAddDentist.Controls.Add(label1);
             grpAddDentist.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpAddDentist.ForeColor = SystemColors.HotTrack;
-            grpAddDentist.Location = new Point(28, 41);
+            grpAddDentist.Location = new Point(27, 81);
             grpAddDentist.Name = "grpAddDentist";
             grpAddDentist.RightToLeft = RightToLeft.No;
-            grpAddDentist.Size = new Size(747, 400);
+            grpAddDentist.Size = new Size(920, 471);
             grpAddDentist.TabIndex = 1;
             grpAddDentist.TabStop = false;
             grpAddDentist.Text = "Enter the Details:";
@@ -123,7 +123,7 @@
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(703, 2);
+            btnExit.Location = new Point(875, 27);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 9;
@@ -135,7 +135,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 475);
+            ClientSize = new Size(982, 580);
             Controls.Add(grpAddDentist);
             Controls.Add(btnExit);
             Name = "frmAddService";

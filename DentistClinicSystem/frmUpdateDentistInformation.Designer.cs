@@ -120,7 +120,7 @@
             grpDentists.Location = new Point(26, 328);
             grpDentists.Name = "grpDentists";
             grpDentists.RightToLeft = RightToLeft.No;
-            grpDentists.Size = new Size(747, 459);
+            grpDentists.Size = new Size(747, 396);
             grpDentists.TabIndex = 7;
             grpDentists.TabStop = false;
             grpDentists.Text = "Update the Details:";
@@ -130,7 +130,7 @@
             // 
             btnUpdate.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpdate.ForeColor = SystemColors.HotTrack;
-            btnUpdate.Location = new Point(164, 348);
+            btnUpdate.Location = new Point(168, 312);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(196, 56);
             btnUpdate.TabIndex = 8;
@@ -207,7 +207,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 802);
+            ClientSize = new Size(982, 753);
             Controls.Add(grpDentists);
             Controls.Add(btnExit);
             Controls.Add(grpUpdate);

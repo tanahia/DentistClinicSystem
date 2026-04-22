@@ -207,7 +207,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(982, 553);
+            ClientSize = new Size(982, 580);
             Controls.Add(grpMakeAppointment);
             Controls.Add(btnExit);
             Name = "frmMakeAppointment";

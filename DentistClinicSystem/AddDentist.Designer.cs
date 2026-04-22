@@ -60,7 +60,7 @@
             grpAddDentist.Location = new Point(26, 93);
             grpAddDentist.Name = "grpAddDentist";
             grpAddDentist.RightToLeft = RightToLeft.No;
-            grpAddDentist.Size = new Size(747, 459);
+            grpAddDentist.Size = new Size(922, 459);
             grpAddDentist.TabIndex = 0;
             grpAddDentist.TabStop = false;
             grpAddDentist.Text = "Enter the Details:";
@@ -146,7 +146,7 @@
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(701, 3);
+            btnExit.Location = new Point(876, 23);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 5;
@@ -176,7 +176,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 580);
+            ClientSize = new Size(982, 580);
             Controls.Add(label4);
             Controls.Add(txtDentistID);
             Controls.Add(btnExit);

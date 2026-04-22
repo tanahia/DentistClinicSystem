@@ -264,7 +264,7 @@
             frmWelcome.AutoSize = true;
             frmWelcome.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             frmWelcome.ForeColor = Color.DodgerBlue;
-            frmWelcome.Location = new Point(210, 125);
+            frmWelcome.Location = new Point(219, 195);
             frmWelcome.Name = "frmWelcome";
             frmWelcome.Size = new Size(519, 33);
             frmWelcome.TabIndex = 2;
@@ -275,7 +275,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(126, 188);
+            label1.Location = new Point(135, 258);
             label1.Name = "label1";
             label1.Size = new Size(724, 88);
             label1.TabIndex = 3;
@@ -299,7 +299,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveBorder;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(982, 553);
+            ClientSize = new Size(982, 580);
             Controls.Add(btnExit);
             Controls.Add(label1);
             Controls.Add(frmWelcome);

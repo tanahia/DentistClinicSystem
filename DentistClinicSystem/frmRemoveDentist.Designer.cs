@@ -42,7 +42,7 @@
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(954, 12);
+            btnExit.Location = new Point(857, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 6;
@@ -58,9 +58,9 @@
             grpRemove.Controls.Add(btnSearch);
             grpRemove.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpRemove.ForeColor = SystemColors.HotTrack;
-            grpRemove.Location = new Point(45, 42);
+            grpRemove.Location = new Point(40, 63);
             grpRemove.Name = "grpRemove";
-            grpRemove.Size = new Size(987, 593);
+            grpRemove.Size = new Size(889, 466);
             grpRemove.TabIndex = 2;
             grpRemove.TabStop = false;
             grpRemove.Text = "Enter Dentist Name:";
@@ -111,7 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1090, 661);
+            ClientSize = new Size(982, 580);
             Controls.Add(grpRemove);
             Controls.Add(btnExit);
             Name = "frmRemoveDentist";

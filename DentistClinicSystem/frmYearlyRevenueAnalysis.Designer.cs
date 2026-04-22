@@ -47,9 +47,9 @@
             grpRevenue.Controls.Add(cmbYear);
             grpRevenue.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grpRevenue.ForeColor = SystemColors.HotTrack;
-            grpRevenue.Location = new Point(23, 27);
+            grpRevenue.Location = new Point(45, 27);
             grpRevenue.Name = "grpRevenue";
-            grpRevenue.Size = new Size(1003, 545);
+            grpRevenue.Size = new Size(897, 524);
             grpRevenue.TabIndex = 0;
             grpRevenue.TabStop = false;
             grpRevenue.Text = "Choose the year for revenue analysis:";
@@ -60,13 +60,13 @@
             revenueChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             revenueChart.Legends.Add(legend1);
-            revenueChart.Location = new Point(33, 138);
+            revenueChart.Location = new Point(33, 114);
             revenueChart.Name = "revenueChart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             revenueChart.Series.Add(series1);
-            revenueChart.Size = new Size(932, 375);
+            revenueChart.Size = new Size(826, 375);
             revenueChart.TabIndex = 10;
             revenueChart.Text = "revenueChart";
             revenueChart.Visible = false;
@@ -96,7 +96,7 @@
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(948, 2);
+            btnExit.Location = new Point(870, -2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 21;
@@ -108,7 +108,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1059, 593);
+            ClientSize = new Size(982, 580);
             Controls.Add(btnExit);
             Controls.Add(grpRevenue);
             Name = "frmYearlyRevenueAnalysis";

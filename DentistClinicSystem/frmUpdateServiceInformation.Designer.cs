@@ -53,10 +53,10 @@
             grpServices.Controls.Add(label1);
             grpServices.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpServices.ForeColor = SystemColors.HotTrack;
-            grpServices.Location = new Point(49, 318);
+            grpServices.Location = new Point(49, 378);
             grpServices.Name = "grpServices";
             grpServices.RightToLeft = RightToLeft.No;
-            grpServices.Size = new Size(885, 336);
+            grpServices.Size = new Size(885, 333);
             grpServices.TabIndex = 3;
             grpServices.TabStop = false;
             grpServices.Text = "Update Service Information:";
@@ -110,7 +110,7 @@
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(878, 12);
+            btnExit.Location = new Point(862, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 20;
@@ -125,9 +125,9 @@
             grpUpdate.Controls.Add(btnSearch);
             grpUpdate.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpUpdate.ForeColor = SystemColors.HotTrack;
-            grpUpdate.Location = new Point(49, 25);
+            grpUpdate.Location = new Point(49, 51);
             grpUpdate.Name = "grpUpdate";
-            grpUpdate.Size = new Size(747, 272);
+            grpUpdate.Size = new Size(885, 295);
             grpUpdate.TabIndex = 22;
             grpUpdate.TabStop = false;
             grpUpdate.Text = "Enter Service Title:";
@@ -166,7 +166,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(981, 684);
+            ClientSize = new Size(982, 753);
             Controls.Add(grpUpdate);
             Controls.Add(btnExit);
             Controls.Add(grpServices);

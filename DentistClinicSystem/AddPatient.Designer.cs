@@ -69,10 +69,10 @@
             grpAddDentist.Controls.Add(lblFullName);
             grpAddDentist.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grpAddDentist.ForeColor = SystemColors.HotTrack;
-            grpAddDentist.Location = new Point(26, 105);
+            grpAddDentist.Location = new Point(25, 82);
             grpAddDentist.Name = "grpAddDentist";
             grpAddDentist.RightToLeft = RightToLeft.No;
-            grpAddDentist.Size = new Size(747, 690);
+            grpAddDentist.Size = new Size(928, 486);
             grpAddDentist.TabIndex = 1;
             grpAddDentist.TabStop = false;
             grpAddDentist.Text = "Enter the Details:";
@@ -86,16 +86,16 @@
             // 
             // txtAllergies
             // 
-            txtAllergies.Location = new Point(181, 538);
+            txtAllergies.Location = new Point(648, 178);
             txtAllergies.Multiline = true;
             txtAllergies.Name = "txtAllergies";
-            txtAllergies.Size = new Size(250, 58);
+            txtAllergies.Size = new Size(250, 79);
             txtAllergies.TabIndex = 8;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(18, 538);
+            label7.Location = new Point(485, 178);
             label7.Name = "label7";
             label7.Size = new Size(92, 23);
             label7.TabIndex = 17;
@@ -103,16 +103,16 @@
             // 
             // txtDentalProblems
             // 
-            txtDentalProblems.Location = new Point(180, 412);
+            txtDentalProblems.Location = new Point(647, 77);
             txtDentalProblems.Multiline = true;
             txtDentalProblems.Name = "txtDentalProblems";
-            txtDentalProblems.Size = new Size(251, 103);
+            txtDentalProblems.Size = new Size(251, 81);
             txtDentalProblems.TabIndex = 7;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(17, 412);
+            label6.Location = new Point(484, 77);
             label6.Name = "label6";
             label6.Size = new Size(156, 23);
             label6.TabIndex = 15;
@@ -139,7 +139,7 @@
             // 
             btnSave.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.ForeColor = SystemColors.HotTrack;
-            btnSave.Location = new Point(180, 614);
+            btnSave.Location = new Point(333, 414);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(196, 56);
             btnSave.TabIndex = 8;
@@ -208,7 +208,7 @@
             // 
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.HotTrack;
-            btnExit.Location = new Point(701, 3);
+            btnExit.Location = new Point(881, 25);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(72, 33);
             btnExit.TabIndex = 7;
@@ -221,7 +221,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.HotTrack;
-            label5.Location = new Point(39, 44);
+            label5.Location = new Point(41, 35);
             label5.Name = "label5";
             label5.Size = new Size(109, 23);
             label5.TabIndex = 10;
@@ -229,7 +229,7 @@
             // 
             // txtPatientID
             // 
-            txtPatientID.Location = new Point(186, 44);
+            txtPatientID.Location = new Point(188, 35);
             txtPatientID.Name = "txtPatientID";
             txtPatientID.Size = new Size(125, 27);
             txtPatientID.TabIndex = 11;
@@ -238,7 +238,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 873);
+            ClientSize = new Size(982, 580);
             Controls.Add(label5);
             Controls.Add(btnExit);
             Controls.Add(grpAddDentist);
