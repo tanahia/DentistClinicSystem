@@ -61,7 +61,7 @@ namespace DentistClinicSystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            int i;
+         
             if (dtpSearch.Value < DateTime.Today)
             {
                 MessageBox.Show("Appointment Date must be a today or future date.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);

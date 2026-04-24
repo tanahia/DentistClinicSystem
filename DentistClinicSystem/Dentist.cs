@@ -43,23 +43,26 @@ namespace DentistClinicSystem
             DBConnect.ExecuteNonQuery(sql);
         }
         public static int GetNextDentID()
-        {
-            string sql = "SELECT MAX(DENTISTID) FROM DENTISTS";
-            OracleDataReader reader = DBConnect.ExecuteSingleRowQuery(sql);
-            int nextID = 1;
-            reader.Read();
-            if (reader.IsDBNull(0))
-            {
-                nextID = 1;
-            }
-            else
-            {
-                nextID = reader.GetInt32(0) + 1;
-            }
-            reader.Close();
-            return nextID;
+         {
+             string sql = "SELECT MAX(DENTISTID) FROM DENTISTS";
+             OracleDataReader reader = DBConnect.ExecuteSingleRowQuery(sql);
+             int nextID = 1;
 
-        }
+             reader.Read();
+             if (reader.IsDBNull(0))
+             {
+                 nextID = 1;
+             }
+             else
+             {
+                 nextID = reader.GetInt32(0) + 1;
+             }
+             reader.Close();
+             return nextID;
+
+         }
+
+        
         public static DataSet getDentists()
 
         {
@@ -112,5 +115,6 @@ namespace DentistClinicSystem
             }
                
         }
+        
     }
 }

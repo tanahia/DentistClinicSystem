@@ -94,7 +94,7 @@ namespace DentistClinicSystem
 
         private void frmAddDentist_Load(object sender, EventArgs e)
         {
-            txtDentistID.Text = Dentist.GetNextDentID().ToString("00");
+            txtDentistID.Text = Dentist.GetNextDentID().ToString("0");
 
 
         }

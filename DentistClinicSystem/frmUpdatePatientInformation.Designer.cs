@@ -33,7 +33,7 @@
             grdPatients = new DataGridView();
             txtSearch = new TextBox();
             btnSearch = new Button();
-            grpAddDentist = new GroupBox();
+            grpPatients = new GroupBox();
             dtpDateofBirth = new DateTimePicker();
             txtAllergies = new TextBox();
             label7 = new Label();
@@ -51,7 +51,7 @@
             lblFullName = new Label();
             grpUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)grdPatients).BeginInit();
-            grpAddDentist.SuspendLayout();
+            grpPatients.SuspendLayout();
             SuspendLayout();
             // 
             // btnExit
@@ -110,32 +110,33 @@
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
-            // grpAddDentist
+            // grpPatients
             // 
-            grpAddDentist.Controls.Add(dtpDateofBirth);
-            grpAddDentist.Controls.Add(txtAllergies);
-            grpAddDentist.Controls.Add(label7);
-            grpAddDentist.Controls.Add(txtDentalProblems);
-            grpAddDentist.Controls.Add(label6);
-            grpAddDentist.Controls.Add(txtHealthProblems);
-            grpAddDentist.Controls.Add(label4);
-            grpAddDentist.Controls.Add(btnUpdate);
-            grpAddDentist.Controls.Add(txtAddress);
-            grpAddDentist.Controls.Add(txtPhone);
-            grpAddDentist.Controls.Add(txtFullName);
-            grpAddDentist.Controls.Add(label3);
-            grpAddDentist.Controls.Add(label2);
-            grpAddDentist.Controls.Add(label1);
-            grpAddDentist.Controls.Add(lblFullName);
-            grpAddDentist.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grpAddDentist.ForeColor = SystemColors.HotTrack;
-            grpAddDentist.Location = new Point(30, 337);
-            grpAddDentist.Name = "grpAddDentist";
-            grpAddDentist.RightToLeft = RightToLeft.No;
-            grpAddDentist.Size = new Size(928, 486);
-            grpAddDentist.TabIndex = 22;
-            grpAddDentist.TabStop = false;
-            grpAddDentist.Text = "Enter the Details:";
+            grpPatients.Controls.Add(dtpDateofBirth);
+            grpPatients.Controls.Add(txtAllergies);
+            grpPatients.Controls.Add(label7);
+            grpPatients.Controls.Add(txtDentalProblems);
+            grpPatients.Controls.Add(label6);
+            grpPatients.Controls.Add(txtHealthProblems);
+            grpPatients.Controls.Add(label4);
+            grpPatients.Controls.Add(btnUpdate);
+            grpPatients.Controls.Add(txtAddress);
+            grpPatients.Controls.Add(txtPhone);
+            grpPatients.Controls.Add(txtFullName);
+            grpPatients.Controls.Add(label3);
+            grpPatients.Controls.Add(label2);
+            grpPatients.Controls.Add(label1);
+            grpPatients.Controls.Add(lblFullName);
+            grpPatients.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpPatients.ForeColor = SystemColors.HotTrack;
+            grpPatients.Location = new Point(30, 337);
+            grpPatients.Name = "grpPatients";
+            grpPatients.RightToLeft = RightToLeft.No;
+            grpPatients.Size = new Size(928, 486);
+            grpPatients.TabIndex = 22;
+            grpPatients.TabStop = false;
+            grpPatients.Text = "Enter the Details:";
+            grpPatients.Visible = false;
             // 
             // dtpDateofBirth
             // 
@@ -205,6 +206,7 @@
             btnUpdate.TabIndex = 8;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click_1;
             // 
             // txtAddress
             // 
@@ -268,7 +270,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(982, 853);
-            Controls.Add(grpAddDentist);
+            Controls.Add(grpPatients);
             Controls.Add(grpUpdate);
             Controls.Add(btnExit);
             Name = "frmUpdatePatientInformation";
@@ -276,8 +278,8 @@
             grpUpdate.ResumeLayout(false);
             grpUpdate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)grdPatients).EndInit();
-            grpAddDentist.ResumeLayout(false);
-            grpAddDentist.PerformLayout();
+            grpPatients.ResumeLayout(false);
+            grpPatients.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -287,7 +289,7 @@
         private DataGridView grdPatients;
         private TextBox txtSearch;
         private Button btnSearch;
-        private GroupBox grpAddDentist;
+        private GroupBox grpPatients;
         private DateTimePicker dtpDateofBirth;
         private TextBox txtAllergies;
         private Label label7;
